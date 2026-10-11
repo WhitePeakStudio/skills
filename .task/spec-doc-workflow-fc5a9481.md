@@ -62,8 +62,8 @@ Plan assessed artifacts: objective/scope, acceptance, plan and verification in t
 Implementation review: pass. Reviewed input: `47bb45808da207cd855346e4c89c8fc259436af8`.
 Implementation assessed artifacts: the seven task skill entrypoints and plugin.json;
 accepted plan/scope/acceptance/verification remain unchanged against the plan input.
-Ready for mandatory documentation and independent documentation review; that gate
-is pending, including the README dependency/installation update.
+Documentation complete; ready for independent documentation review of the
+documenter's exact commit. Documentation gate remains pending.
 
 ## Latest findings, evidence and decisions
 
@@ -155,3 +155,34 @@ Limits: behavioral fixtures remain root-owned and in progress; this review recor
 source inspection and static/Git evidence, not fresh behavioral fixture execution
 or live hosted publication. Documentation gate remains pending; delivery is not
 approved by this pass.
+
+## Documentation evidence
+
+Input: `a5f502a5de98e5b69de489875895f995d2dd3a86`. Assigned absolute path,
+branch and exact HEAD matched; tracked/untracked status was empty before writing.
+Used task-document and docbook; README is the established package introduction
+and practical usage guide. No extra documentation scaffold is useful for this
+scoped instruction-only package update.
+
+Updated README to list nine skills, the specification planning through three
+reviews and PR flow, useful minimal missing spec/docs creation, capability/rule
+references instead of copied acceptance, separate author/reviewer write boundaries,
+mandatory documentation/no-change assessment and review, documentation commit
+prefixes, retained artifact-based gate validity, upstream routing and three-gate
+delivery. Workflow installation now requires all seven task skills and both
+specialists together with sibling layout; individual specialist installation,
+marketplace commands and package identity are preserved. Invocation example follows
+the implemented flow. Links point to the role protocol and gate rules for details.
+
+Earlier passes remain valid: objective/scope, acceptance, plan and verification
+content is unchanged against plan input `87320f51efbe996cf396b17a6179fd0c1e7ed2ac`.
+`git diff --exit-code 47bb45808da207cd855346e4c89c8fc259436af8 -- skills plugin.json`
+confirmed all assessed implementation files/metadata unchanged. Only README and
+this note changed; no implementation, test or contract edit occurred.
+
+Package validator passed: nine frontmatters, 35 local links/anchors, metadata
+0.3.0 / Repository Skills and preserved specialist/catalog bytes. `git diff
+--check` passed. Read all seven implemented task skills and metadata against the
+README claims. No source discrepancy or unresolved decision found. Documentation
+review is independent and pending; no behavioral fixture or live publication
+result is claimed by this role.
