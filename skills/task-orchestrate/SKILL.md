@@ -88,11 +88,12 @@ actual purpose/content: skill sources and executable examples can be implementat
 regardless of extension/directory. Never silently cross boundaries. Create only
 useful task-required spec/docs content; no empty scaffolds or unrelated migrations.
 
-At each handoff, replace the role's obsolete findings/evidence with its current
-result; retain relevant unresolved issues and accepted references. Do not append
-prior runs or handoff history: Git retains them. The orchestrator checks the note
-is current before dispatch; compact bookkeeping outside assessment blocks without
-altering accepted requirements or review records.
+Before each handoff commit, every writer refreshes the whole current-state note:
+remove superseded findings/evidence and stale stage/readiness claims across all
+roles. Retain current decisions, unresolved issues, relevant verification evidence,
+accepted references, and valid review records; Git retains prior runs. Keep
+stage/readiness claims outside assessment blocks, and preserve accepted block text
+when refreshing bookkeeping. The orchestrator checks the note is current before dispatch.
 Update stage/evidence, stage authorized files only, commit with configured signing,
 and verify commit/clean status. Even documentation no-change decisions require a
 note commit and independent review. Roles never push or open PRs. Return only
