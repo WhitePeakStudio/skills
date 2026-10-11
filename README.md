@@ -41,6 +41,13 @@ Each role verifies the assigned clean path, branch, and input commit,
 then commits before the next handoff. This workflow requires fresh-context
 subagent support; the package provides instructions, not an orchestration service.
 
+The orchestrator prefers GPT-6 Luna for documentation and its review, and GPT-6.1
+Sol for the other roles. Explicit task instructions override these defaults.
+Model identifiers are resolved through the host; unavailable built-in preferences
+fall back to the host default with disclosure, while unsupported explicit choices
+require a decision. Reasoning effort inherits host settings unless specified.
+See [subagent models](skills/task-orchestrate/SKILL.md#subagent-models).
+
 Planning uses specbook to write affected capability contracts in `spec/`; task
 acceptance and verification reference capability paths and rule names instead of
 duplicating the contracts. Missing spec or documentation structures receive only

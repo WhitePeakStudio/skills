@@ -14,6 +14,30 @@ Own the lifecycle; delegate sequentially to [task-plan](../task-plan/SKILL.md),
 Require fresh-context subagents and Git; report unavailable capabilities without
 claiming independent review or isolation.
 
+## Subagent models
+
+Use these built-in preferences; explicit task instructions override them globally
+or per role. Unspecified roles retain their preferences.
+
+| Roles | Preferred model |
+|---|---|
+| task-document, task-review-documentation | GPT-6 Luna (`gpt-6-luna`) |
+| task-plan, task-review-plan, task-implement, task-review-implementation | GPT-6.1 Sol (`gpt-6.1-sol`) |
+
+Before dispatch, resolve selections through the harness's advertised model
+identifiers and model-selection controls. Use a documented identifier for the
+same model; do not guess aliases or equivalent models from another provider.
+If a built-in preference is unavailable or selection is unsupported, inherit
+the harness default and disclose the fallback. Inherit reasoning effort unless
+explicitly instructed. An unsupported explicit model or effort requires a
+decision before dependent dispatch; never silently substitute it. Validate
+both settings. Keep resolved selections stable across corrective attempts
+unless instructed otherwise. Record actual selections and fallbacks compactly
+in the task note; if the actual model is unknown, say so. Pass settings through
+the harness controls, not as instructions asking a subagent to change itself.
+Role skills remain model-independent; this mapping does not select the running
+orchestrator's model. Fresh context remains required regardless of fallback.
+
 ## Isolation and state
 
 Inspect repository instructions, user scope, and delivery authorization. Resolve
