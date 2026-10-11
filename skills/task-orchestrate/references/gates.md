@@ -75,8 +75,17 @@ Each latest review is `{verdict: pass|revise|needs-decision, input: <full-sha>,
 artifacts: [literal/repository-relative/files]}`. `input` is the reviewer's assigned
 HEAD, not its findings commit. The reviewer commits immediately on that HEAD with
 its `review-…:` prefix; Git supplies the findings commit without a self-referencing
-SHA field. Keep assessed paths precise, include dependencies whose changes affect
-approval, and include additions/deletions. Empty lists are valid only for an
+SHA field. `artifacts` lists files whose unchanged contents preserve approval,
+not every file consulted. Typical selections:
+
+- Plan: affected specifications and stable constraints.
+- Implementation: implementation/tests and contract dependencies.
+- Documentation: documentation and the code/specifications supporting its claims.
+
+Treat planned downstream edit targets as context unless approval depends on their
+current contents. If it does, include them and rerun the affected gate after changes;
+never exclude a required dependency merely to keep a pass valid. Keep paths precise
+and include additions/deletions. Empty lists are valid only for an
 evidenced no-file-change assessment. The checker cannot prove scope completeness
 or reviewer identity/correctness; reviewers remain responsible for those judgments.
 
