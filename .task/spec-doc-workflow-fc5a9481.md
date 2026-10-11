@@ -59,11 +59,15 @@ actual PR publication is checked separately.
 
 Plan review: pass. Reviewed input: `87320f51efbe996cf396b17a6179fd0c1e7ed2ac`.
 Plan assessed artifacts: objective/scope, acceptance, plan and verification in this note; supplied contract and existing package boundaries. These remain unchanged.
-Implementation review: pass. Reviewed input: `47bb45808da207cd855346e4c89c8fc259436af8`.
+Implementation review: prior pass invalidated by the task-document product
+instruction correction below; fresh independent implementation review pending.
+Retained reviewed input: `47bb45808da207cd855346e4c89c8fc259436af8`.
 Implementation assessed artifacts: the seven task skill entrypoints and plugin.json;
 accepted plan/scope/acceptance/verification remain unchanged against the plan input.
-Documentation complete; ready for independent documentation review of the
-documenter's exact commit. Documentation gate remains pending.
+Prior documentation completed at `5f37323a45d958fabf6fa9411328090dc978cb53`;
+its readiness assessment is invalidated by the product instruction correction.
+Documentation and its independent review are pending after a fresh implementation
+pass; README remains untouched by this correction and must be reassessed then.
 
 ## Latest findings, evidence and decisions
 
@@ -174,8 +178,9 @@ specialists together with sibling layout; individual specialist installation,
 marketplace commands and package identity are preserved. Invocation example follows
 the implemented flow. Links point to the role protocol and gate rules for details.
 
-Earlier passes remain valid: objective/scope, acceptance, plan and verification
-content is unchanged against plan input `87320f51efbe996cf396b17a6179fd0c1e7ed2ac`.
+At the prior documentation input, earlier passes remained valid: objective/scope,
+acceptance, plan and verification content was unchanged against plan input
+`87320f51efbe996cf396b17a6179fd0c1e7ed2ac`.
 `git diff --exit-code 47bb45808da207cd855346e4c89c8fc259436af8 -- skills plugin.json`
 confirmed all assessed implementation files/metadata unchanged. Only README and
 this note changed; no implementation, test or contract edit occurred.
@@ -186,3 +191,29 @@ Package validator passed: nine frontmatters, 35 local links/anchors, metadata
 README claims. No source discrepancy or unresolved decision found. Documentation
 review is independent and pending; no behavioral fixture or live publication
 result is claimed by this role.
+
+## Implementation correction evidence
+
+Input: `5f37323a45d958fabf6fa9411328090dc978cb53`. Assigned absolute path,
+branch and exact HEAD matched; tracked/untracked status was empty before writing.
+Root's behavioral fixture observed a documenter notice missing reviewed-plan
+artifact evidence but draft documentation before returning blocked. Tightened
+task-document's precondition to inspect prerequisites and discrepancies before
+documentation writes and return a committed note-only blocker/upstream route for
+missing/stale passes or code/contract corrections. Independent investigation stays
+read-only until required upstream passes; documentation-only defects remain in
+the documenter's scope. Entry mismatches still stop without writes.
+
+Only task-document product instructions and this note changed; README untouched.
+Plan pass and exact reference `87320f51efbe996cf396b17a6179fd0c1e7ed2ac` remain
+valid: objective/scope, acceptance, plan and verification are unchanged. Prior
+implementation reference `47bb45808da207cd855346e4c89c8fc259436af8` and historical
+review evidence are retained, but its assessed product instructions changed, so
+that pass and downstream readiness are invalid. Ready for independent
+implementation review of this correction's exact commit; documentation reassessment
+and review follow its pass. No reviewer verdict is claimed here.
+
+Validation: nine frontmatters, 35 local links/anchors, package metadata and
+preserved specialist/catalog bytes passed the package validator; diff --check
+passed. Behavioral recheck belongs to root; no new fixture or publication result
+is claimed. No unresolved implementation decision.

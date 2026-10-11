@@ -10,8 +10,13 @@ Read the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol) and
 path, branch, clean tracked/untracked status, and exact input HEAD before writing;
 stop on mismatch and preserve changes.
 
-Confirm retained plan and implementation passes remain valid against their exact
-reviewed references and current assessed artifacts. Use
+Before documentation writes, inspect prerequisites and code/contract discrepancies
+and confirm retained plan and implementation passes remain valid against their exact
+reviewed references and current assessed artifacts. Missing/stale passes or
+discrepancies requiring upstream correction return a committed note-only blocker
+with the upstream route before documentation edits; independent authorized
+investigation remains read-only until required passes, while documentation-only
+defects remain in this role's normal scope. Use
 [docbook](../docbook/SKILL.md) to inspect relevant documentation, accepted specs,
 and implemented behavior. Update practical guidance, navigation, examples, and
 assets for the actual result. Create only useful missing documentation needed for
