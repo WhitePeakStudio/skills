@@ -68,7 +68,7 @@ instructions such as these SKILL.md files are implementation. Documentation
 assessment and independent review are mandatory after accepted implementation,
 even when the result is a committed, evidenced no-change decision. Documentation
 commits use `document:` and review commits use `review-documentation:`. See the
-[role protocol](skills/task-orchestrate/SKILL.md#role-protocol) for all role prefixes
+[role protocol](skills/task-orchestrate/references/role-contract.md) for all role prefixes
 and handoff requirements.
 
 Blocking findings return to the responsible author for correction and fresh
@@ -83,7 +83,7 @@ those artifacts, including assessed plan/acceptance content, are unchanged;
 substantive changes invalidate the affected gate and downstream assessments.
 Documentation or bookkeeping alone can preserve unchanged earlier passes; Markdown
 product instructions have no blanket exemption. See the
-[gate rules](skills/task-orchestrate/SKILL.md#gates-and-corrections).
+[gate rules](skills/task-orchestrate/references/gates.md).
 Accounted-for advisories do not block acceptance. Missing decisions pause dependent
 work, and the same blocker after two corrective attempts without new evidence ends
 the loop.
@@ -99,6 +99,12 @@ logs. Handoffs supply path/branch, objective/scope, exact input commit/sources,
 and acceptance/expected result. Roles return only Status, Commit, Result,
 Evidence, and Open issues; assignment completion and review verdict are distinct.
 
+Roles load their own skill, the short shared role contract and note state, plus
+relevant artifacts/specialist instructions. Recovery and delivery references are
+loaded only when needed; the orchestrator does not preload every role. Keep note
+prose to current findings and concise command/result evidence tied to commits;
+omit role narratives and routine check logs. YAML alone owns workflow status.
+
 The note's compact YAML records identity/base, next stage, latest review inputs and
 assessed paths, current blocker/attempts, decision, and recovery marker. Git history
 retains repeated executions. Bounded contract and documentation-assessment blocks
@@ -106,7 +112,7 @@ separate reviewed content from changing bookkeeping. The read-only Python gate
 checker verifies local prerequisites before dispatch/delivery and returns only
 `allowed`/`reason`; it neither selects corrective routes nor proves review quality
 or hosted verification. See the [gate contract](skills/task-orchestrate/references/gates.md)
-for exhaustive transitions, state format, setup, and invocation. It requires PyYAML
+for exhaustive transitions, setup, and invocation; [note state](skills/task-orchestrate/references/state.md) defines the unchanged format. It requires PyYAML
 only when running the checker. Missing prerequisites block normal progression;
 explicit interrupted-role recovery remains governed by the shared protocol.
 

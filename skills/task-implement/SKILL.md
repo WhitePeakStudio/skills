@@ -5,12 +5,9 @@ description: Implement an independently accepted task plan and authoritative spe
 
 # Implement a task
 
-Read and follow the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol)
-and [gate rules](../task-orchestrate/SKILL.md#gates-and-corrections), including the
-[state/checker contract](../task-orchestrate/references/gates.md). Update its current
-YAML state and assessment blocks; repeated executions stay in Git history. Before writing,
-verify path, branch, clean tracked/untracked status, and exact input HEAD; stop on
-mismatch, preserving changes. Only explicit recovery assignments waive clean input.
+Read the [role contract](../task-orchestrate/references/role-contract.md) and
+[note state](../task-orchestrate/references/state.md); load only relevant artifacts
+and conditional references. Follow their handoff, freshness, and correction rules.
 
 Validate the note's plan pass against its exact reviewed reference and current
 plan/spec artifacts. Implement within accepted plan, contracts, scope, and repository
