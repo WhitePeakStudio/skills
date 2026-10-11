@@ -5,35 +5,32 @@ description: Update repository documentation after accepted implementation, or c
 
 # Document a task
 
-Read the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol) and
-[gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Verify assigned
-path, branch, clean tracked/untracked status, and exact input HEAD before writing;
-stop on mismatch and preserve changes. Only an explicit recovery assignment may
-use the shared interrupted-role exception to the clean-input check.
+Read and follow the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol)
+and [gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Before writing,
+verify path, branch, clean tracked/untracked status, and exact input HEAD; stop on
+mismatch, preserving changes. Only explicit recovery assignments waive clean input.
 
-Before documentation writes, inspect prerequisites and code/contract discrepancies
-and confirm retained plan and implementation passes remain valid against their exact
-reviewed references and current assessed artifacts. Missing/stale passes or
-discrepancies requiring upstream correction return a committed note-only blocker
-with the upstream route before documentation edits; independent authorized
-investigation remains read-only until required passes, while documentation-only
-defects remain in this role's normal scope. Use
-[docbook](../docbook/SKILL.md) to inspect relevant documentation, accepted specs,
-and implemented behavior. Update practical guidance, navigation, examples, and
-assets for the actual result. Create only useful missing documentation needed for
-the task; preserve established organization and avoid empty scaffolds/migrations.
-Link authoritative capability contracts rather than duplicating normative rules.
+Before documentation writes, inspect prerequisites/code/contract discrepancies and
+validate plan/implementation passes against exact reviewed references and current
+artifacts. Missing/stale passes or upstream discrepancies require a committed
+note-only blocker with routing before documentation edits; authorized investigation
+stays read-only until passes. Documentation-only defects remain in this role's scope.
 
-Write only documentation (`docs/`, README, documentation examples/assets) and
-`.task/<id>.md`; do not change implementation/tests or specifications. Classify
-actual content, not extensions: product instruction files and executable examples
-may require upstream implementation work. Route code defects to implementer/review,
-contract or plan changes to planner/review; record discrepancies without presenting
-intended behavior as implemented. After upstream correction, recheck documentation
-against corrected accepted artifacts.
+Use [docbook](../docbook/SKILL.md) to inspect relevant docs, accepted specs, and
+implemented behavior. Update practical guidance, navigation, examples, and assets
+for actual results. Create only useful missing content; preserve established
+organization, avoiding empty scaffolds/migrations. Link authoritative
+contracts instead of duplicating normative rules.
 
-Run relevant documentation checks and record changes/evidence/limitations, or an
-explicit evidenced no-change decision. Preserve earlier gate references and
-validity decisions; mark ready for documentation review. Commit even no-change
-results with `document:`, verify clean status, and return the shared five fields.
-Your work does not approve documentation. Do not push or open a PR.
+Write only docs, README, documentation examples/assets, and `.task/<id>.md`, never
+implementation/tests or specs. Classify content, not extension: product instructions
+and executable examples may need implementation work. Route code defects to
+implementer/reviewer and contract/plan issues to planner/reviewer. Record discrepancies
+without presenting intended behavior as implemented. Recheck against accepted
+artifacts after upstream correction.
+
+Run relevant documentation checks; record changes/evidence/limits or an evidenced
+no-change decision. Preserve earlier reviews/validity decisions. Mark ready for
+independent documentation review, not self-approved. Commit even no-change results
+with `document:`, verify clean status, and return the shared five fields.
+Do not push or open a PR.
