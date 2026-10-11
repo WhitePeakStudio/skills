@@ -52,7 +52,7 @@ extra reports, or orchestration service.
   force, and creates a PR. Remove a clean task worktree only after successful PR
   creation and required attachment; retain branch/history. Failed push/PR or
   dirty cleanup retains the worktree and reports recoverable state. Alternate
-  delivery requires the user's instruction. No push/PR during this task.
+  delivery requires the user's instruction. No push/PR by role subagents; orchestrator delivers.
 - README introduces all seven skills, role order, correction loops, concurrent
   task isolation, compact handoffs, task-note lifecycle, and default delivery.
   Manifest version is 0.2.0 and displayName Repository Skills. Preserve manifest
@@ -105,23 +105,44 @@ extra reports, or orchestration service.
 
 ## Stage
 
-Plan ready for review; no implementation or delivery performed.
+Plan accepted. Ready for implementation against the accepted plan below; no
+implementation or delivery performed. Plan-review input commit:
+`9d634387d6c57d72cef78604230431a5e9fe7891`. The review commit is a later note-only
+commit and is not the reviewed input.
 
 ## Latest findings and evidence
 
-- Assigned absolute path and branch confirmed; git status was clean and HEAD
-  matched the supplied input commit before creating this note.
-- No `.codegraph/` exists, so CodeGraph was skipped.
-- Package currently contains only specbook/docbook; manifest is 0.1.0 with
-  Specbook & Docbook presentation. Marketplace uses local `./` source.
-- Git ownership requires a command-local `safe.directory` override for this
-  checkout; avoid changing global git configuration.
+- Verdict: accepted. The five separate instruction skills fit the existing
+  instructions-only package and `skills/` discovery layout. The plan assigns
+  narrow role duties and centralizes lifecycle rules in task-orchestrate;
+  no new runtime, helper scripts, or auxiliary product files are needed.
+- Scope and acceptance are complete: exact skill names, compact handoffs,
+  fresh-context sequential roles, concurrent task isolation, immutable review
+  attribution, correction gates, missing decisions, bounded stalled progress,
+  role commits, and recoverable default PR delivery all have explicit coverage.
+- Disposable git scenarios make the lifecycle verifiable without a live hosted
+  PR. They cover success, both correction loops, concurrency, review attribution,
+  dirty handoffs, stalled progress, missing decisions, failed delivery, and clean
+  cleanup. Record command/results and distinguish simulated remote actions from
+  actual hosted delivery in the implementation evidence.
+- During implementation, make the entry-check contract and review outcomes
+  explicit in each role skill; relative cross-links can carry shared lifecycle
+  details. Delivery must validate that the task-note path was absent at the base
+  and is absent at delivery, preserving all role commits and a zero net diff.
+  These clarify existing acceptance rather than add scope or a decision gate.
+- Inspected README.md, plugin.json, .agents/plugins/marketplace.json, and both
+  existing SKILL.md files. Current manifest is 0.1.0 with Specbook & Docbook
+  presentation; package identity is `skills` and marketplace source is `./`.
+  Updating presentation/version while preserving catalog and existing skills
+  byte for byte is feasible and can be checked by git diff or file hashes.
+- Assigned absolute checkout and branch were verified. Before this review's
+  write, status was clean and HEAD exactly matched the reviewed input SHA above.
+  No `.codegraph/` exists. Git uses a command-local safe.directory override.
 
 ## Decisions and open issues
 
-- Keep workflow definitions in the five SKILL.md files and this temporary note;
-  introduce no auxiliary protocol/template files.
-- Preserve marketplace catalog content; change only manifest presentation and
-  README package introduction/use/layout.
-- No outstanding product decision; implementation reviewer may refine concrete
-  validation coverage without expanding scope.
+- No outstanding material decision or blocking plan finding.
+- Preserve marketplace catalog content and existing specbook/docbook. Workflow
+  definitions belong in the five new SKILL.md files; this task note is temporary.
+- Role subagents perform no push/PR actions. The root orchestrator is authorized
+  to deliver the implementation through push/PR and final task-note cleanup.
