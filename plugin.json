@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "skills",
-  "version": "0.1.0",
-  "description": "Write and maintain capability specifications and repository documentation with specbook and docbook.",
+  "version": "0.2.0",
+  "description": "Maintain repository specifications and documentation, and coordinate isolated tasks through planning, implementation, review, and pull-request delivery.",
   "author": {
     "name": "jb-perrier",
     "url": "https://github.com/jb-perrier"
@@ -12,13 +12,14 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Specbook & Docbook",
-        "shortDescription": "Maintain specifications and repository documentation",
+        "displayName": "Repository Skills",
+        "shortDescription": "Specifications, documentation, and isolated task workflows",
         "developerName": "jb-perrier",
         "category": "Productivity",
         "defaultPrompt": [
           "Use specbook to write or review capability specifications in spec/.",
-          "Use docbook to write or organize documentation in docs/."
+          "Use docbook to write or organize documentation in docs/.",
+          "Use task-orchestrate to coordinate an isolated repository task through plan and implementation reviews to a pull request."
         ]
       }
     }
