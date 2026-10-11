@@ -1,12 +1,14 @@
 # Repository Skills
 
 An instructions-only Agent Plugins package for specifications, documentation,
-and isolated repository tasks.
+isolated repository tasks, and skill optimization.
 
 - [specbook](skills/specbook/SKILL.md): Authoritative capability specifications
   in `spec/`, with normative rules and observable acceptance criteria.
 - [docbook](skills/docbook/SKILL.md): Documentation in `docs/`, with Diátaxis
   guidance, folder and page templates, and maintenance rules.
+- [skill-optimize](skills/skill-optimize/SKILL.md): Standalone skill compression
+  with comparable token measurements and checks for preserved meaning.
 - [task-orchestrate](skills/task-orchestrate/SKILL.md): Coordinate isolated tasks
   through fresh-context roles and pull-request delivery.
 - [task-plan](skills/task-plan/SKILL.md): Write affected specifications and the
@@ -24,6 +26,9 @@ and isolated repository tasks.
 
 The skills complement each other: specifications define required behavior;
 documentation explains how to use, understand, develop, and operate the system.
+Skill optimization works independently of the task workflow: it proposes a
+compact revision, or edits the source when requested. It reports the tokenizer,
+measurement scope, savings and verification; unavailable exact counts are explicit.
 
 ## Task workflow
 
@@ -90,6 +95,7 @@ plugin.json
 skills/
 |-- specbook/SKILL.md
 |-- docbook/SKILL.md
+|-- skill-optimize/SKILL.md
 |-- task-orchestrate/SKILL.md
 |-- task-plan/SKILL.md
 |-- task-review-plan/SKILL.md
@@ -101,7 +107,7 @@ skills/
 ```
 
 The root manifest uses the [Agent Plugins schema](https://agent-plugins.org/schemas/1.0.0/plugin.schema.json).
-All nine skills are discovered from `skills/`. OpenAI presentation metadata lives in
+All ten skills are discovered from `skills/`. OpenAI presentation metadata lives in
 `extensions.com.openai`; the repository also includes a Codex marketplace catalog.
 The package contains instructions only and requires no MCP servers or credentials.
 
@@ -130,11 +136,14 @@ Select the relevant skill in your agent, or request it by name:
 ```text
 Use specbook to review the authentication capability in spec/.
 Use docbook to organize the existing documentation in docs/.
+Use skill-optimize to shorten this skill, compare token counts, and preserve its instructions.
 Use task-orchestrate to deliver this repository change through specification planning, implementation, documentation, and all three reviews to a PR.
 ```
 
 Hosts that support portable Agent Plugins can load the root package. Standalone
-skill installers can install `skills/specbook` or `skills/docbook` individually.
+skill installers can install `skills/specbook`, `skills/docbook`, or
+`skills/skill-optimize` individually. Skill optimization has no sibling skill
+dependencies; exact counting uses a tokenizer available on the host.
 For the task workflow, install all seven `task-*` skills plus `specbook` and
 `docbook` together, preserving their sibling directory layout for relative links.
 Specbook and docbook retain their existing instructions
