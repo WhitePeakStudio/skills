@@ -105,44 +105,40 @@ extra reports, or orchestration service.
 
 ## Stage
 
-Plan accepted. Ready for implementation against the accepted plan below; no
-implementation or delivery performed. Plan-review input commit:
-`9d634387d6c57d72cef78604230431a5e9fe7891`. The review commit is a later note-only
-commit and is not the reviewed input.
+Implementation complete; ready for independent implementation review. Entry
+checks passed at input `d8bd18c0d0d0f9e70eb8229da61d4c7a74b09ca3`:
+assigned absolute checkout/branch, clean tracked/untracked state, exact HEAD.
+Plan-review verdict remains accepted for plan input
+`9d634387d6c57d72cef78604230431a5e9fe7891`; its later review commit is distinct.
+No implementation verdict or external delivery is claimed.
 
 ## Latest findings and evidence
 
-- Verdict: accepted. The five separate instruction skills fit the existing
-  instructions-only package and `skills/` discovery layout. The plan assigns
-  narrow role duties and centralizes lifecycle rules in task-orchestrate;
-  no new runtime, helper scripts, or auxiliary product files are needed.
-- Scope and acceptance are complete: exact skill names, compact handoffs,
-  fresh-context sequential roles, concurrent task isolation, immutable review
-  attribution, correction gates, missing decisions, bounded stalled progress,
-  role commits, and recoverable default PR delivery all have explicit coverage.
-- Disposable git scenarios make the lifecycle verifiable without a live hosted
-  PR. They cover success, both correction loops, concurrency, review attribution,
-  dirty handoffs, stalled progress, missing decisions, failed delivery, and clean
-  cleanup. Record command/results and distinguish simulated remote actions from
-  actual hosted delivery in the implementation evidence.
-- During implementation, make the entry-check contract and review outcomes
-  explicit in each role skill; relative cross-links can carry shared lifecycle
-  details. Delivery must validate that the task-note path was absent at the base
-  and is absent at delivery, preserving all role commits and a zero net diff.
-  These clarify existing acceptance rather than add scope or a decision gate.
-- Inspected README.md, plugin.json, .agents/plugins/marketplace.json, and both
-  existing SKILL.md files. Current manifest is 0.1.0 with Specbook & Docbook
-  presentation; package identity is `skills` and marketplace source is `./`.
-  Updating presentation/version while preserving catalog and existing skills
-  byte for byte is feasible and can be checked by git diff or file hashes.
-- Assigned absolute checkout and branch were verified. Before this review's
-  write, status was clean and HEAD exactly matched the reviewed input SHA above.
-  No `.codegraph/` exists. Git uses a command-local safe.directory override.
+- Added five compact instruction-only SKILL.md files. Shared role protocol lives
+  in task-orchestrate; narrow roles link directly to that section. Lifecycle
+  covers fresh-context sequential handoffs, isolation, exact entry checks,
+  reviewed-SHA attribution, correction gates, decisions, bounded stalled loops,
+  and recoverable PR delivery. Assignment status and review verdict are distinct.
+- README introduces all seven skills and workflow. Manifest is 0.2.0 / Repository
+  Skills; package/repository/author identity preserved. No supporting product
+  scripts, templates, references, or services added.
+- Ran skill-creator/scripts/quick_validate.py against all seven skill folders:
+  all passed. External work/validate_package.py run with this checkout passed:
+  seven frontmatters, 15 prose local links/anchors, exact new directory contents,
+  metadata consistency, existing specbook/docbook and marketplace bytes unchanged
+  from base, and git diff --check. An initial broad link probe encountered an
+  existing docbook code-example path; the prose-aware validator excludes example
+  code blocks and passed. No repository changes were made for that example.
+- Inspected external disposable lifecycle evidence at
+  C:/Users/jimiv/Documents/Codex/2026-10-11/in/work/workflow-check-b055f0da/verification.json:
+  ten Git mechanics checks passed, including concurrent isolation, both correction
+  sequences, reviewed commit ancestry, dirty cleanup refusal, zero note net diff,
+  preserved history, failed push recovery, local push, and clean cleanup retaining
+  the branch. This uses a local bare remote; hosted PR creation and agent decision
+  behavior are separate checks, not claims from that fixture.
 
 ## Decisions and open issues
 
-- No outstanding material decision or blocking plan finding.
-- Preserve marketplace catalog content and existing specbook/docbook. Workflow
-  definitions belong in the five new SKILL.md files; this task note is temporary.
-- Role subagents perform no push/PR actions. The root orchestrator is authorized
-  to deliver the implementation through push/PR and final task-note cleanup.
+- No material implementation decision or known blocking finding.
+- Fresh implementation review remains required. Role implementation performs no
+  push/PR actions; root orchestrator handles delivery and final note cleanup.
