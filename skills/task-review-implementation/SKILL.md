@@ -1,29 +1,33 @@
 ---
 name: task-review-implementation
-description: Independently review an exact implementation commit against its accepted task plan and acceptance criteria, committing findings and a verdict only in the task note.
+description: Independently review an exact implementation commit against accepted planning, authoritative specifications, acceptance, and verification evidence.
 ---
 
 # Review an implementation
 
-Read only the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol)
-and assigned sources; unrelated orchestrator sections are unnecessary. Before
-writing, verify the assigned absolute path, branch, clean tracked/untracked
-status, and HEAD equal to the input SHA; stop on mismatch, preserving changes.
+Read the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol) and
+[gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Verify assigned
+path, branch, clean tracked/untracked status, and exact input HEAD before writing;
+stop on mismatch, preserving changes.
 
-Inspect that exact implementation commit and its diff against the accepted plan,
-scope, acceptance, and repository constraints. Assess correctness, regressions,
-and verification evidence; run focused read-only checks where useful. Check
-prior blocking findings and advisory dispositions. Do not silently fix code or
-approve a changed plan; scope/plan changes require the plan/review gate.
+Check the recorded plan pass against its exact reviewed reference and current
+assessed artifacts. Inspect the assigned implementation and diff against accepted
+plan/specifications, scope, acceptance, and constraints. Assess correctness,
+regressions, and verification evidence, including capability/rule coverage;
+run focused read-only checks where useful. Check prior blocking findings and
+advisory dispositions. Do not silently fix code or approve changed contracts/plans;
+route those changes to planner and plan reviewer before dependent implementation.
 
-Write only `.task/<id>.md`: record reviewed input SHA, actionable findings,
-evidence/limitations, and verdict `pass`, `revise`, or `needs-decision`. Blocking
-findings require correction and fresh review; accounted-for advisories do not
-block a pass. Record missing material decisions without assuming approval.
-Replace stale review state while retaining current plan and relevant decisions.
+Write only `.task/<id>.md`: record verdict `pass`, `revise`, or `needs-decision`,
+exact reviewed input SHA, assessed implementation/tests and accepted references,
+actionable findings, evidence, and limitations. Preserve the plan review record
+and relevant decisions; mark downstream documentation assessments pending or
+invalid when affected. Blocking findings require implementation correction and
+fresh review; accounted-for advisories do not block a pass. Record missing
+material decisions without assuming approval.
 
-Commit the note, verify clean status, and return `Status`, `Commit`, `Result`,
-`Evidence`, `Open issues`; Result carries the verdict. Assignment completion is
-separate from acceptance. Commit is your later note commit, not the reviewed
-input SHA. A pass applies only to that input; corrections require another review.
-Do not push or create a PR.
+Commit with `review-implementation:`, verify clean status, and return the shared
+five fields; Result carries the verdict. Completion is separate from acceptance;
+your note commit is distinct from reviewed input. Descendants retain a pass only
+under shared artifact-validity rules. A pass makes the task ready for mandatory
+documentation and its review, including a no-change decision. Do not push or open a PR.

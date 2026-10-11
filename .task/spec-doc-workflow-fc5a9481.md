@@ -58,7 +58,8 @@ actual PR publication is checked separately.
 ## Stage and accepted reviews
 
 Plan review: pass. Reviewed input: `87320f51efbe996cf396b17a6179fd0c1e7ed2ac`.
-Ready for implementation at the ensuing clean review-note commit; no implementation yet.
+Plan assessed artifacts: objective/scope, acceptance, plan and verification in this note; supplied contract and existing package boundaries. These remain unchanged.
+Implementation: complete; ready for independent implementation review of this commit. Implementation and documentation gates pending.
 
 ## Latest findings, evidence and decisions
 
@@ -87,3 +88,18 @@ to this repository change. It must not become a general exemption from specbook,
 docbook, useful missing structures or their rules in the evolved task skills.
 Verification must exercise those general rules in disposable task repositories.
 Fixture delivery remains simulated; live delivery evidence belongs to root.
+## Implementation evidence
+
+Updated seven task skill entrypoints and plugin metadata to 0.3.0. Shared protocol
+owns role boundaries, retained artifact-based review validity, upstream routing,
+mandatory documentation/no-change review and three-gate delivery. README deferred
+to documenter; specialist skills and marketplace unchanged. No new package files
+beyond the two requested SKILL.md entrypoints.
+
+Package validator passed: nine skill frontmatters, 31 local links/anchors,
+metadata identity/version and preserved specialist/catalog bytes; diff --check
+passed. Existing Git lifecycle fixture has ten passes at external
+work/workflow-check-eab0132f/verification.json (local simulated delivery).
+Fresh-context behavior fixtures and live hosted delivery belong to subsequent
+roles/root; no behavioral or live publication result claimed here.
+No open implementation decision. Input: e1ddd4acc9d2f19c26ae32ae8337c1b7e4b32a83.
