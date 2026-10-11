@@ -1,7 +1,8 @@
 # Repository Skills
 
-An instructions-only Agent Plugins package for specifications, documentation,
-isolated repository tasks, and skill optimization.
+An Agent Plugins package for specifications, documentation,
+isolated repository tasks, and skill optimization, with an optional token-counting
+script.
 
 - [specbook](skills/specbook/SKILL.md): Authoritative capability specifications
   in `spec/`, with normative rules and observable acceptance criteria.
@@ -133,7 +134,11 @@ skills/
 The root manifest uses the [Agent Plugins schema](https://agent-plugins.org/schemas/1.0.0/plugin.schema.json).
 All ten skills are discovered from `skills/`. OpenAI presentation metadata lives in
 `extensions.com.openai`; the repository also includes a Codex marketplace catalog.
-The package contains instructions only and requires no MCP servers or credentials.
+The package requires no MCP servers or credentials. The optional skill-optimize
+token-counting script uses Python 3.10+ and `tiktoken`; its setup and usage
+are in the skill. It accepts arbitrary text, files, or stdin independently of
+repository layout. It measures text, not behavioral equivalence, and may
+download tokenizer data on first use.
 
 ## Install in Codex
 

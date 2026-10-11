@@ -12,6 +12,23 @@ Present a proposed revision by default; edit the source when requested.
 
 ## Measure
 
+The generic [count_tokens.py](scripts/count_tokens.py) counts arbitrary text using
+Python 3.10+ and `tiktoken`. With authorization, install the dependency in your
+chosen environment: `python -m pip install tiktoken`. The script never installs
+it; the first encoding load may download tokenizer data, cached runs can be offline.
+
+```sh
+python scripts/count_tokens.py --text "Text to measure"
+python scripts/count_tokens.py --file /path/to/instructions.md
+```
+
+Use the script's absolute path or run from this skill's directory. With neither
+input option, it reads UTF-8 stdin. JSON reports token count, tokenizer/version,
+and encoding. Whitespace/newlines are preserved; special-token-like strings are
+literal text. Default `o200k_base` is a measurement encoding, not a target-model
+claim; use `--encoding` to select another. Choose files, aggregate counts, and
+compare revisions yourself; the script has no repository or skill-specific logic.
+
 Use an available tokenizer for the intended model, recording its name/encoding
 and version. If unspecified, use an available named tokenizer and disclose that
 choice. Count original and revised text with the same tokenizer, file set, and
