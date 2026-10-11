@@ -105,40 +105,59 @@ extra reports, or orchestration service.
 
 ## Stage
 
-Implementation complete; ready for independent implementation review. Entry
-checks passed at input `d8bd18c0d0d0f9e70eb8229da61d4c7a74b09ca3`:
-assigned absolute checkout/branch, clean tracked/untracked state, exact HEAD.
-Plan-review verdict remains accepted for plan input
-`9d634387d6c57d72cef78604230431a5e9fe7891`; its later review commit is distinct.
-No implementation verdict or external delivery is claimed.
+Independent implementation review complete: verdict `pass` for reviewed input
+`e10d3caf84e44208f71e12e0b97ec2e1ce3c7f8f`. This exact input is the approved
+implementation artifact; the later review-note commit is a separate handoff.
+Entry checks verified the assigned absolute checkout, branch
+`task/workflow-skills-8c419e2a`, clean tracked/untracked status, and exact HEAD.
+Plan-review acceptance remains for plan input
+`9d634387d6c57d72cef78604230431a5e9fe7891`.
+External delivery and final task-note cleanup remain with the orchestrator.
 
 ## Latest findings and evidence
 
-- Added five compact instruction-only SKILL.md files. Shared role protocol lives
-  in task-orchestrate; narrow roles link directly to that section. Lifecycle
-  covers fresh-context sequential handoffs, isolation, exact entry checks,
-  reviewed-SHA attribution, correction gates, decisions, bounded stalled loops,
-  and recoverable PR delivery. Assignment status and review verdict are distinct.
-- README introduces all seven skills and workflow. Manifest is 0.2.0 / Repository
-  Skills; package/repository/author identity preserved. No supporting product
-  scripts, templates, references, or services added.
-- Ran skill-creator/scripts/quick_validate.py against all seven skill folders:
-  all passed. External work/validate_package.py run with this checkout passed:
-  seven frontmatters, 15 prose local links/anchors, exact new directory contents,
-  metadata consistency, existing specbook/docbook and marketplace bytes unchanged
-  from base, and git diff --check. An initial broad link probe encountered an
-  existing docbook code-example path; the prose-aware validator excludes example
-  code blocks and passed. No repository changes were made for that example.
-- Inspected external disposable lifecycle evidence at
-  C:/Users/jimiv/Documents/Codex/2026-10-11/in/work/workflow-check-b055f0da/verification.json:
-  ten Git mechanics checks passed, including concurrent isolation, both correction
-  sequences, reviewed commit ancestry, dirty cleanup refusal, zero note net diff,
-  preserved history, failed push recovery, local push, and clean cleanup retaining
-  the branch. This uses a local bare remote; hosted PR creation and agent decision
-  behavior are separate checks, not claims from that fixture.
+- Blocking findings: none. Inspected the full product diff from base
+  `fbc226fd4532fa7ca85c75d8b24e4df59a9ac86d` through the reviewed implementation
+  input, all five new skill instructions, README/manifest, and existing skill and
+  marketplace sources. Changes follow the accepted scope and plan.
+- Lifecycle review: sequential fresh-context dispatch, dirty/mismatched entry
+  stops, exact reviewed-SHA attribution distinct from review-note commits,
+  author/reviewer correction routing, renewed plan gate for scope changes,
+  missing-decision waits, bounded stalled corrections, and recoverable delivery
+  form a coherent protocol. Note-only review commits and the final bookkeeping
+  deletion do not implicitly approve substantive changes.
+- Re-ran external work/validate_package.py against this checkout: all seven
+  frontmatters, 15 prose local links/anchors, exact five new directory contents,
+  JSON/metadata identity, unchanged existing skills/marketplace bytes, and
+  whitespace checks passed. Base-to-input changed paths contain only README,
+  plugin manifest, five skills, and the temporary task note.
+- Inspected external work/workflow-check-b055f0da/verification.json: ten Git
+  mechanics checks report passing concurrent isolation, both correction
+  sequences, reviewed ancestry, dirty cleanup refusal, zero note net diff,
+  preserved history, failed push recovery, local push, and clean worktree
+  cleanup retaining the branch. These are disposable-repository checks with a
+  local bare remote; no live hosted PR is claimed.
+- Verified additional fixture states in external
+  work/behavior-check-a4c26186/sample-tasks: dirty-3be2d26d retains
+  `?? unrelated.txt` and its initial commit; undecided-0adc471a has a clean
+  note-only planning commit recording missing policy/implementation decisions
+  and paused dependent work; stalled-b8553e75 retains its initial commit and
+  two unchanged corrective attempts. The orchestrator reports that these were
+  fresh-context behavioral runs using the delivered skills; this reviewer
+  independently verified their resulting Git/note states, not every agent turn.
+- Nonblocking advisory: README's individual-directory standalone installation
+  wording is broader than workflow portability. Each role references sibling
+  task-orchestrate; the orchestrator references all four roles. Disposition:
+  orchestrator elected a follow-up README clarification and fresh review;
+  supported validation is for
+  the complete package, and acceptance does not require independently installed
+  workflow roles. Recommend clarifying that standalone workflow installation
+  must preserve the sibling skill family. No style-only changes are required.
 
 ## Decisions and open issues
 
-- No material implementation decision or known blocking finding.
-- Fresh implementation review remains required. Role implementation performs no
-  push/PR actions; root orchestrator handles delivery and final note cleanup.
+- Verdict `pass`; no material decision or blocking implementation issue remains.
+- Standalone workflow installation wording has an elected follow-up correction
+  and fresh review pending, as recorded above. Hosted PR creation is outside this local review's evidence.
+- Orchestrator owns authorized delivery and task-note removal. Any substantive
+  product correction requires independent review of its new exact commit.
