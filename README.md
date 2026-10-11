@@ -99,6 +99,17 @@ logs. Handoffs supply path/branch, objective/scope, exact input commit/sources,
 and acceptance/expected result. Roles return only Status, Commit, Result,
 Evidence, and Open issues; assignment completion and review verdict are distinct.
 
+The note's compact YAML records identity/base, next stage, latest review inputs and
+assessed paths, current blocker/attempts, decision, and recovery marker. Git history
+retains repeated executions. Bounded contract and documentation-assessment blocks
+separate reviewed content from changing bookkeeping. The read-only Python gate
+checker verifies local prerequisites before dispatch/delivery and returns only
+`allowed`/`reason`; it neither selects corrective routes nor proves review quality
+or hosted verification. See the [gate contract](skills/task-orchestrate/references/gates.md)
+for exhaustive transitions, state format, setup, and invocation. It requires PyYAML
+only when running the checker. Missing prerequisites block normal progression;
+explicit interrupted-role recovery remains governed by the shared protocol.
+
 Delivery requires valid passing plan, implementation, and documentation gates.
 Default delivery removes the note in a delivery commit, preserves role history,
 verifies a clean checkout and zero task-note net diff, pushes without force, and
@@ -122,6 +133,8 @@ skills/
 |-- docbook/SKILL.md
 |-- skill-optimize/SKILL.md
 |-- task-orchestrate/SKILL.md
+|-- task-orchestrate/references/gates.md
+|-- task-orchestrate/scripts/check_gate.py
 |-- task-plan/SKILL.md
 |-- task-review-plan/SKILL.md
 |-- task-implement/SKILL.md
@@ -134,7 +147,8 @@ skills/
 The root manifest uses the [Agent Plugins schema](https://agent-plugins.org/schemas/1.0.0/plugin.schema.json).
 All ten skills are discovered from `skills/`. OpenAI presentation metadata lives in
 `extensions.com.openai`; the repository also includes a Codex marketplace catalog.
-The package requires no MCP servers or credentials. The optional skill-optimize
+The package requires no MCP servers or credentials. The task gate checker uses
+Python 3.10+, Git, and PyYAML. The optional skill-optimize
 token-counting script uses Python 3.10+ and `tiktoken`; its setup and usage
 are in the skill. It accepts arbitrary text, files, or stdin independently of
 repository layout. It measures text, not behavioral equivalence, and may

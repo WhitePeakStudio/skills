@@ -13,6 +13,10 @@ Own the lifecycle; delegate sequentially to [task-plan](../task-plan/SKILL.md),
 [task-review-documentation](../task-review-documentation/SKILL.md).
 Require Git and fresh-context subagents; report missing capabilities without
 claiming isolation or independent review.
+Read and follow the [gate contract](references/gates.md): exhaustive transitions,
+compact YAML state, bounded assessment blocks, and read-only checker invocation.
+Run its checker before normal dispatch and delivery; a denial blocks that action.
+The checker does not choose corrective routes or establish review/hosted correctness.
 
 ## Subagent models
 
@@ -50,7 +54,9 @@ Confirm `.task/<id>.md` is absent at base, then create and commit it. Record
 objective, scope, sources, acceptance, base, plan/stage, latest findings/evidence,
 decisions/open issues, and all three review records. Replace stale detail while
 retaining relevant evidence and accepted references; no transcripts. Files and
-note supply context without inherited chat.
+note supply context without inherited chat. Use the gate contract's YAML fields
+and assessment blocks; retain only latest reviews/current blocker, not a runs array.
+Git history preserves repeated executions and prior passes.
 
 ## Role protocol
 
@@ -90,6 +96,9 @@ note commit and independent review. Roles never push or open PRs. Return only
 (`pass`, `revise`, `needs-decision`) belongs in Result and note.
 Commit prefixes: `plan:`, `review-plan:`, `implement:`,
 `review-implementation:`, `document:`, `review-documentation:`.
+Set stage to the next action under the gate contract. Reviewers replace their latest
+YAML record with verdict, input SHA, and assessed paths while preserving valid other
+gates; clear affected downstream records. Keep findings/evidence in the note body.
 
 Retain each review's verdict, exact input SHA separately from its findings commit,
 assessed artifacts (plan/specs, implementation/tests, documentation/no-change
@@ -147,6 +156,8 @@ changes reopen affected gates and downstream assessments.
 Remove `.task/<id>.md` in a `deliver:` commit, preserving role history. Verify clean
 status, note absence at base/delivery, zero net diff for its path, and bookkeeping-only
 delivery changes. Substantive edits reopen affected gates and downstream stages.
+Retain the last note-bearing SHA in delivery evidence; use the checker's archived
+state mode after removal. Local gate permission does not prove hosted verification.
 Push the explicit branch without force or changing base; create a PR against the
 resolved target describing behavior and actual validation. Attach when required.
 
