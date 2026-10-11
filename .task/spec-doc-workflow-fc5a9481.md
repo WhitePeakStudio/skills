@@ -367,3 +367,15 @@ root's independent no-change and code-fix fixtures were still running at assignm
 This review claims local source/artifact/static evidence only, not those unfinished
 external checks or live hosted publication. Root must resolve its delivery checks
 before publication; no documentation issue remains open.
+
+## Final external validation
+
+Root completed the fresh-agent fixtures: specification creation; rejected plan
+correction and review; documentation creation, correction and review; independently
+reviewed no-change; early/stale gate stops; code discrepancy correction and fresh
+implementation review without specification changes; unresolved policy decision;
+dirty handoff preservation; and stopping after two ineffective corrective attempts.
+Nine frontmatters and 35 links pass; specialist/catalog bytes remain unchanged.
+Ten disposable Git lifecycle checks pass, including concurrency, failed push
+recovery, note removal and retained history. Hosted delivery remains the next step.
+All three accepted package gates remain valid: this update changes evidence only.
