@@ -41,6 +41,11 @@ Each role verifies the assigned clean path, branch, and input commit,
 then commits before the next handoff. This workflow requires fresh-context
 subagent support; the package provides instructions, not an orchestration service.
 
+Interrupted work is recovered by the same role in fresh context only after its
+previous writer has stopped and its changes have been identified. Normal handoffs
+remain clean; uncertain ownership requires reconciliation. Runtime resources
+outside the checkout need task-specific isolation or coordinated exclusive use.
+
 The orchestrator prefers GPT-6 Luna for documentation and its review, and GPT-6.1
 Sol for the other roles. Explicit task instructions override these defaults.
 Model identifiers are resolved through the host; unavailable built-in preferences
@@ -82,6 +87,11 @@ Accounted-for advisories do not block acceptance. Missing decisions pause depend
 work, and the same blocker after two corrective attempts without new evidence ends
 the loop.
 
+Each reviewer examines cumulative changes in its scope from the recorded task
+base to the assigned commit, including corrections. Reviewers assess requirements
+and artifacts independently before comparing author-provided evidence; the task
+note holds facts rather than reasoning transcripts.
+
 One compact `.task/<id>.md` holds current scope, acceptance, plan, stage,
 findings/evidence, and decisions. Replace stale state instead of accumulating
 logs. Handoffs supply path/branch, objective/scope, exact input commit/sources,
@@ -91,9 +101,16 @@ Evidence, and Open issues; assignment completion and review verdict are distinct
 Delivery requires valid passing plan, implementation, and documentation gates.
 Default delivery removes the note in a delivery commit, preserves role history,
 verifies a clean checkout and zero task-note net diff, pushes without force, and
-opens a PR. Required PR attachment precedes clean worktree removal; the branch
-and history remain. Failed delivery retains recoverable state. User instructions
-can select another delivery method; role subagents never push or open PRs.
+opens a PR. Delivery fetches and reports target-branch movement without automatic
+integration. Hosted mergeability and relevant CI are checked at the pushed head:
+failed checks or conflicts block completion; pending or unavailable results mean
+**PR opened, verification pending**. No configured CI is not a CI pass. There is
+no indefinite polling or automatic monitoring. Keep the worktree until applicable
+verification and mergeability are resolved; a later invocation can resume from
+the existing PR, branch, and committed task history. Required attachment also
+precedes clean worktree removal; branch/history remain. Integration or corrective
+changes reopen affected gates. User instructions can select another delivery
+method; role subagents never push or open PRs.
 
 ## Package layout
 

@@ -67,6 +67,17 @@ and HEAD equal to input SHA. Mismatch or dirty handoff stops for reconciliation;
 preserve changes without reset, deletion, or automatic attribution. Follow
 repository instructions; inspect sources needed for the assignment.
 
+Recovery is an explicit exception to the clean-input precondition, not a normal
+handoff. Confirm the interrupted writer and its child processes have stopped;
+if uncertain, do not dispatch another writer. Inspect HEAD, staged/unstaged diffs,
+and untracked files. Give the same role a fresh-context recovery assignment with
+current HEAD and the identified task changes, using the existing assignment
+fields. The role verifies that inventory, preserves and completes attributable
+work within its write boundary, then commits and returns cleanly. Uncertain
+ownership, unexpected changes, or a changed inventory require reconciliation or
+a decision; never reset, delete, or automatically claim them. If a commit already
+exists, verify it and recover the missing handoff rather than duplicating work.
+
 Write boundaries: planner edits affected `spec/` contracts and note using
 [specbook](../specbook/SKILL.md); implementer edits authorized implementation/tests
 and note; documenter edits documentation, README, documentation examples/assets
@@ -90,6 +101,20 @@ reviewer's later note commit), assessed artifacts, and evidence. Identify the
 plan/specs, implementation/tests, or documentation/no-change rationale actually
 assessed so later comparisons can establish validity. Preserve earlier records
 when writing a later gate; never replace all gates with a single latest verdict.
+
+Review cumulative changes in the role's scope from recorded task base to exact
+input SHA, including current artifacts and relevant dependencies. Corrective
+reviews also recheck prior findings; never inspect only the latest commit. Keep
+the note factual: requirements, decisions, findings, and evidence, not producer
+reasoning transcripts. Reviewers form an independent assessment from requirements
+and artifacts before comparing author-provided evidence or success claims.
+
+Before tests or runtime operations, identify conflicting shared resources such as
+ports, databases, containers, accounts, or outputs outside the worktree. Use
+task-specific resources where supported; otherwise coordinate exclusive access
+or serialize conflicting operations. If exclusivity cannot be established, pause
+those operations. Record only active constraints in the existing note; a worktree
+does not isolate external state.
 
 ## Gates and corrections
 
@@ -132,6 +157,10 @@ note, and return the unresolved issue.
 Default delivery is a PR; honor user-directed alternatives. Establish required
 external-action authorization under active host rules. Require valid passing
 plan, implementation, and documentation gates against current assessed artifacts.
+Fetch the target's current commit before delivery and report whether it advanced
+from the recorded base. Do not automatically merge or rebase; conflicts or a
+required integration decision block completion. Integration changes reopen the
+affected gates and downstream assessments.
 Remove `.task/<id>.md` in a `deliver:` commit, preserving all role commits. Verify
 clean status, absence of note at base/delivery, zero base-to-delivery net diff for
 its path, and bookkeeping-only delivery changes. Substantive edits reopen the
@@ -139,8 +168,20 @@ affected gate and downstream stages before delivery.
 
 Push the explicit task branch without force, leaving base branch unchanged; create
 a PR against the resolved target describing behavior and actual validation.
-Attach it when required. Remove only the clean task worktree after successful PR
-creation and required attachment; retain branch/history. Failed push, creation,
-attachment, or dirty cleanup retains recoverable checkout/branch and reports the
-failure. Distinguish local/disposable simulations from live hosted delivery and
-report only checks performed.
+Attach it when required. Inspect hosted mergeability and relevant CI for the
+exact pushed head; distinguish passing checks, failed checks, pending checks,
+and unavailable evidence. No configured checks is not a CI pass. Failed checks
+or conflicts block completion; pending/unknown results mean the PR is opened
+but verification is pending. Report the current state without indefinite polling
+or automatic monitoring. Keep the checkout until applicable verification passes
+and mergeability is established; report limits when the host cannot establish it.
+
+On a later invocation, locate the existing PR/branch and inspect HEAD, status,
+and checks before resuming; recover the note from committed history if more role
+work is needed. Apply normal gates to fixes, remove the note again for delivery,
+and push without force. Remove only the clean worktree after successful PR
+creation, required attachment, and resolved verification; retain branch/history.
+Failed push, creation, attachment, verification, or dirty cleanup retains the
+recoverable checkout/branch. Distinguish simulations from live hosted delivery
+and report only checks performed; PR opened and verification complete are
+different outcomes.

@@ -8,7 +8,8 @@ description: Independently review an exact plan and specification commit for con
 Read the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol) and
 [gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Verify assigned
 path, branch, clean tracked/untracked status, and exact input HEAD before writing;
-stop on mismatch, preserving changes.
+stop on mismatch, preserving changes. Only an explicit recovery assignment may
+use the shared interrupted-role exception to the clean-input check.
 
 Review that input's plan and affected contracts using
 [specbook](../specbook/SKILL.md). Check authoritative capability boundaries,
@@ -18,6 +19,9 @@ acceptance and verification links to capability paths/rule names, or the evidenc
 for a no-contract-change decision. Assess feasibility, scope, repository
 constraints, risks, and material decisions. Check prior findings and advisory
 dispositions. Do not rewrite contracts/plan or silently expand scope.
+
+Review cumulative changes in your scope from the recorded task base to this
+input SHA under the shared review rules, not just the latest corrective commit.
 
 Write only `.task/<id>.md`: record verdict `pass`, `revise`, or `needs-decision`,
 exact reviewed input SHA, assessed plan/specification artifacts, actionable

@@ -8,7 +8,8 @@ description: Independently review an exact implementation commit against accepte
 Read the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol) and
 [gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Verify assigned
 path, branch, clean tracked/untracked status, and exact input HEAD before writing;
-stop on mismatch, preserving changes.
+stop on mismatch, preserving changes. Only an explicit recovery assignment may
+use the shared interrupted-role exception to the clean-input check.
 
 Check the recorded plan pass against its exact reviewed reference and current
 assessed artifacts. Inspect the assigned implementation and diff against accepted
@@ -17,6 +18,9 @@ regressions, and verification evidence, including capability/rule coverage;
 run focused read-only checks where useful. Check prior blocking findings and
 advisory dispositions. Do not silently fix code or approve changed contracts/plans;
 route those changes to planner and plan reviewer before dependent implementation.
+
+Review cumulative changes in your scope from the recorded task base to this
+input SHA under the shared review rules, not just the latest corrective commit.
 
 Write only `.task/<id>.md`: record verdict `pass`, `revise`, or `needs-decision`,
 exact reviewed input SHA, assessed implementation/tests and accepted references,
