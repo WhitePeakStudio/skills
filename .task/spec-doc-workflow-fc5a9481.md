@@ -69,8 +69,9 @@ unchanged accepted plan/scope/acceptance/verification.
 Prior documentation completed at `5f37323a45d958fabf6fa9411328090dc978cb53`;
 its readiness assessment remains invalidated by the product instruction correction.
 Documentation reassessment: complete with an evidenced no-change decision against
-the corrected accepted implementation. Stage: ready for independent documentation
-review (ready-docreview). README remains unchanged; documentation review is pending.
+the corrected accepted implementation. Documentation review: pass for exact input
+`75773f8bb5b4d055de5418fea74504b54431c2b7`; assessed README and no-change rationale.
+Stage: all three review gates valid; ready for root delivery checks.
 
 ## Latest findings, evidence and decisions
 
@@ -312,3 +313,57 @@ check. Only this task note changed; README, implementation, tests and contracts
 remain untouched. Stage: ready-docreview. Independent documentation review is
 pending. Behavioral fixtures and live publication remain root-owned; no new
 behavioral or hosted delivery result is claimed. Open issues: none.
+
+## Documentation review findings and evidence
+
+Verdict: **pass** for exact input
+`75773f8bb5b4d055de5418fea74504b54431c2b7`. No blocking finding or missing
+material decision. Verified absolute worktree, task branch, exact HEAD and empty
+tracked/untracked status before writing. This reviewer changes only this note;
+its later commit is distinct from this reviewed documentation input.
+
+Assessed README.md and the Documentation reassessment evidence/no-change rationale
+against all seven current task skill entrypoints, preserved specbook/docbook,
+plugin.json and marketplace metadata. README accurately lists nine skills,
+explains specification planning and all three reviews, role write boundaries,
+mandatory committed/reviewed no-change documentation, artifact-based gate validity,
+upstream correction routing, sequential fresh-context handoffs and recoverable PR
+delivery. Installation requires all seven task skills plus both specialists with
+sibling paths; the earlier installation advisory is resolved. Package tree,
+marketplace/display identities, skill invocation examples, relative links and
+role/gate anchors match current sources. No missing asset or template content found.
+Existing marketplace command examples were inspected as retained package guidance;
+no plugin install or hosted action was executed in this review.
+
+Independently accept the no-change reassessment: README is byte-identical to prior
+documentation completion `5f37323a45d958fabf6fa9411328090dc978cb53`. The corrected
+task-document guard adds prerequisite ordering and note-only upstream blocking,
+consistent with the README's accepted-implementation prerequisite and linked
+protocol/gate details. It introduces no obsolete README claim requiring another
+edit. README remains the established introduction/usage guide; the accepted scoped
+README-only decision avoids useless docs scaffolding and does not exempt general
+workflow tasks from useful spec/docs creation or either specialist's rules.
+
+Retained plan input `87320f51efbe996cf396b17a6179fd0c1e7ed2ac` remains valid:
+inspected its full note diff; objective/scope, acceptance, plan and verification
+are unchanged. Current implementation input
+`05a0fe89defb8bcee8f1b90404051cddc6ec1716` remains valid: actual diff of skills/
+and plugin.json is empty, and the entire descendant path diff contains only this
+note. Historical implementation input
+`47bb45808da207cd855346e4c89c8fc259436af8` retains its recorded invalidity after
+the product instruction correction. Prior documentation readiness remains superseded
+by reassessment and this independent review. All three current exact reviewed
+references and assessed-artifact validity records are retained separately.
+
+Independent `work/validate_package.py <worktree> 0.3.0` passed nine frontmatters,
+35 local links/anchors, preserved specialist/catalog bytes, metadata identity and
+version, and diff check. Base-to-input git diff --check passed. Read existing Git
+lifecycle verification.json: ten passes limited to Git mechanics/local delivery.
+Root separately reports external behavior fixtures for useful spec creation,
+plan/docs reject-correct-re-review, early/stale prerequisite note-only stops,
+code-discrepancy routing to implementation and undefined-policy routing to planning.
+Those are root-supplied observations, not executions performed by this reviewer;
+root's independent no-change and code-fix fixtures were still running at assignment.
+This review claims local source/artifact/static evidence only, not those unfinished
+external checks or live hosted publication. Root must resolve its delivery checks
+before publication; no documentation issue remains open.
