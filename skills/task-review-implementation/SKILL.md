@@ -5,33 +5,27 @@ description: Independently review an exact implementation commit against accepte
 
 # Review an implementation
 
-Read the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol) and
-[gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Verify assigned
-path, branch, clean tracked/untracked status, and exact input HEAD before writing;
-stop on mismatch, preserving changes. Only an explicit recovery assignment may
-use the shared interrupted-role exception to the clean-input check.
+Read and follow the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol)
+and [gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Before writing,
+verify path, branch, clean tracked/untracked status, and exact input HEAD; stop on
+mismatch, preserving changes. Only explicit recovery assignments waive clean input.
 
-Check the recorded plan pass against its exact reviewed reference and current
-assessed artifacts. Inspect the assigned implementation and diff against accepted
-plan/specifications, scope, acceptance, and constraints. Assess correctness,
-regressions, and verification evidence, including capability/rule coverage;
-run focused read-only checks where useful. Check prior blocking findings and
-advisory dispositions. Do not silently fix code or approve changed contracts/plans;
-route those changes to planner and plan reviewer before dependent implementation.
+Validate the plan pass against its exact reviewed reference and current artifacts.
+Review cumulative implementation changes from task base to input SHA against
+accepted plan/specs, scope, acceptance, and constraints, not only the latest correction.
+Assess correctness, regressions, verification evidence, and capability/rule coverage;
+run useful focused read-only checks. Check prior blockers/advisory dispositions.
+Never fix code or approve changed contracts/plans; route them to planner/reviewer
+before dependent implementation.
 
-Review cumulative changes in your scope from the recorded task base to this
-input SHA under the shared review rules, not just the latest corrective commit.
-
-Write only `.task/<id>.md`: record verdict `pass`, `revise`, or `needs-decision`,
-exact reviewed input SHA, assessed implementation/tests and accepted references,
-actionable findings, evidence, and limitations. Preserve the plan review record
-and relevant decisions; mark downstream documentation assessments pending or
-invalid when affected. Blocking findings require implementation correction and
-fresh review; accounted-for advisories do not block a pass. Record missing
-material decisions without assuming approval.
+Write only `.task/<id>.md`: verdict `pass`, `revise`, or `needs-decision`, exact
+reviewed SHA, assessed implementation/tests, accepted references, actionable findings,
+evidence/limits. Preserve plan review/decisions; mark downstream documentation pending
+or invalid when affected. Blockers require correction/fresh review; accounted-for
+advisories do not block. Record missing decisions without assumed approval.
 
 Commit with `review-implementation:`, verify clean status, and return the shared
-five fields; Result carries the verdict. Completion is separate from acceptance;
-your note commit is distinct from reviewed input. Descendants retain a pass only
-under shared artifact-validity rules. A pass makes the task ready for mandatory
-documentation and its review, including a no-change decision. Do not push or open a PR.
+five fields with verdict in Result. Completion differs from acceptance; your note
+commit differs from reviewed input. Descendant passes follow shared validity rules.
+A pass permits mandatory documentation/review, including no-change decisions.
+Do not push or open a PR.

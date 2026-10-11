@@ -5,63 +5,58 @@ description: Reduce the token cost of existing agent skills while preserving the
 
 # Optimize a skill
 
-Read the target SKILL.md and relevant referenced instructions. Keep an original
-snapshot for comparison. Optimize the requested skill, not its requirements or
-unrelated files. This skill is standalone; no task workflow or subagents required.
-Present a proposed revision by default; edit the source when requested.
+Read target SKILL.md and relevant referenced instructions; retain an original
+snapshot. Optimize requested skills, not requirements or unrelated files.
+Standalone: no task workflow/subagents required. Propose revisions by default;
+edit sources when requested.
 
 ## Measure
 
-The generic [count_tokens.py](scripts/count_tokens.py) counts arbitrary text using
-Python 3.10+ and `tiktoken`. With authorization, install the dependency in your
-chosen environment: `python -m pip install tiktoken`. The script never installs
-it; the first encoding load may download tokenizer data, cached runs can be offline.
+Use the generic [count_tokens.py](scripts/count_tokens.py) with Python 3.10+ and
+`tiktoken`. Install dependencies only with authorization:
+`python -m pip install tiktoken`. The script never installs them; first encoding
+load may download tokenizer data, cached runs can be offline.
 
 ```sh
 python scripts/count_tokens.py --text "Text to measure"
 python scripts/count_tokens.py --file /path/to/instructions.md
 ```
 
-Use the script's absolute path or run from this skill's directory. With neither
-input option, it reads UTF-8 stdin. JSON reports token count, tokenizer/version,
-and encoding. Whitespace/newlines are preserved; special-token-like strings are
-literal text. Default `o200k_base` is a measurement encoding, not a target-model
-claim; use `--encoding` to select another. Choose files, aggregate counts, and
-compare revisions yourself; the script has no repository or skill-specific logic.
+Run from this skill's directory or use the script's absolute path. With neither
+input option it reads UTF-8 stdin. JSON reports count, tokenizer/version, and
+encoding; whitespace/newlines are preserved and special-token-like strings literal.
+Default `o200k_base` is a measurement encoding, not a target-model claim; choose
+another with `--encoding`. Select files, aggregate, and compare yourself; the
+script has no repository/skill-specific logic.
 
-Use an available tokenizer for the intended model, recording its name/encoding
-and version. If unspecified, use an available named tokenizer and disclose that
-choice. Count original and revised text with the same tokenizer, file set, and
-text-reading method, preserving whitespace. Include frontmatter in file counts;
-these measure instruction text, not host prompt overhead.
-
-Report SKILL.md separately from referenced instructions; identify mandatory and
-conditional loads. Count each file once in totals. Moving text to references is
-deferred loading, not necessarily a reduction in total tokens. Do not count assets
-or executable helpers as instructions unless their source is actually loaded.
-If accurate counting is unavailable, state that limitation; label estimates and
-do not claim exact savings. Do not install dependencies without authorization.
+Use an available tokenizer for the intended model; if unspecified, disclose the
+chosen named tokenizer. Record name/encoding/version. Measure both revisions with
+the same tokenizer, file set, and text-reading method, preserving whitespace and
+including frontmatter. Counts measure instruction text, not host prompt overhead.
+Report SKILL.md separately from referenced instructions and identify mandatory/
+conditional loads. Count each file once; relocation is deferred loading, not
+necessarily total savings. Exclude assets/helper source unless actually loaded as
+instructions. If accurate counting is unavailable, disclose it, label estimates,
+and never claim exact savings.
 
 ## Compress and verify
 
-Identify the original triggers, prerequisites, required and optional actions,
-ordering, write/permission boundaries, exceptions, outputs, failure behavior,
-and supporting links. Preserve these invariants and frontmatter discovery meaning.
-Remove repetition, shorten phrasing, and consolidate equivalent rules. Keep
-conditions explicit, examples that clarify behavior, and readable language;
-avoid cryptic shorthand or replacing precise rules with broad summaries.
+Identify and preserve original triggers, prerequisites, required/optional actions,
+ordering, write/permission boundaries, exceptions, outputs, failures, links, and
+frontmatter discovery meaning. Remove repetition, shorten phrasing, and consolidate
+equivalent rules. Keep explicit conditions, clarifying examples, and readable
+language; avoid cryptic shorthand or replacing precise rules with broad summaries.
 
-Compare the revision against every original invariant, including referenced
-instructions. Check realistic normal, exception, and blocked cases for changed
-decisions. Token savings alone do not establish equivalence. Restore any wording
-whose removal creates uncertainty; stop when further cuts weaken clarity or
-behavior. No reduction quota applies, and an already compact skill may need none.
-Do not hide or remove requirements by relocating or dropping linked resources.
+Compare every original invariant, including referenced instructions; check normal,
+exception, and blocked cases for changed decisions. Savings do not prove equivalence.
+Restore wording when removal creates uncertainty; stop before clarity/behavior
+weakens. No reduction quota; already compact skills may need no change. Never hide
+or remove requirements by moving/dropping linked resources.
 
-For complex skills, an independent fresh-context review can add confidence when
-available and authorized; give it original and revision without author reasoning.
-It is optional. Keep working comparisons temporary; no permanent report required.
+For complex skills, optional authorized fresh-context independent review can add
+confidence: supply original/revision without author reasoning. Keep working
+comparisons temporary; no permanent report required.
 
-Return the revision or edited paths, tokenizer and measurement scope, before/after
-counts, tokens saved and percentage (when baseline is nonzero), verification,
-and unresolved uncertainty. Claim preserved meaning only to the extent checked.
+Return revision/edited paths, tokenizer/scope, before/after counts, tokens saved,
+percentage when baseline is nonzero, verification, and unresolved uncertainty.
+Qualify preserved-meaning claims by the checks performed.

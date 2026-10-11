@@ -10,14 +10,13 @@ description: Rules for writing and reviewing authoritative capability specificat
 ## Files
 
 Use one self-contained `spec/<area>/.../<capability>.md` per cohesive capability
-or cross-cutting concern. One area level is the default. Add a subarea only when
-it groups several related capabilities and improves navigation; never create a
-directory for one capability or mirror implementation structure. Split
-independent capabilities; keep shared context together.
+or cross-cutting concern. Default to one area level; subareas must group several
+related capabilities and improve navigation. Never create a one-capability directory
+or mirror implementation structure. Split independent capabilities; keep shared context.
 
-For a multi-file specification, `spec/README.md` MUST provide the product scope,
-shared terminology, and a capability index grouped by area with relative links.
-It is shared context, not a capability file:
+For multi-file specs, `spec/README.md` MUST provide product scope, shared terminology,
+and an area-grouped capability index with relative links. It supplies shared context,
+not a capability:
 
 ```markdown
 # Specification
@@ -40,7 +39,7 @@ Short product purpose.
 - [Capability](area/capability.md): Short purpose.
 ```
 
-Keep rules and capability details in their files; do not duplicate them here.
+Keep rules/capability details in their files, not duplicated in the index.
 
 A capability file uses:
 
@@ -62,24 +61,20 @@ Short purpose and scope.
 - **Optional rule:** Observable conditions and expected outcome.
 ```
 
-Description, `Rules`, and `Acceptance` are required. Every rule MUST have
-acceptance coverage. Give each rule a short bold name and reuse it in
-`Acceptance`. Each normative rule belongs to one capability; related files link
-to it rather than restating it. Put normative rules in `Rules`; other sections
-provide supporting detail referenced by those rules, not independent obligations.
+Require description, `Rules`, and `Acceptance`. Every rule MUST have acceptance
+coverage under the same short bold name. Each normative rule belongs to one
+capability; related files link rather than restate it. Normative rules belong in
+`Rules`; other sections supply referenced supporting detail, not independent obligations.
 
-Acceptance gives enough initial conditions, trigger or input, and observable
-outcome to distinguish success from failure; do not merely restate the rule or
-describe test implementation.
-Cover relevant boundaries, invalid inputs, failures, and recovery where applicable.
-Given/When/Then is optional. For MAY rules, cover behavior when supported or
-enabled and the valid outcome when absent or disabled.
+Acceptance states initial conditions, trigger/input, and observable outcome that
+distinguish success/failure, not rule restatements or test implementation. Cover
+applicable boundaries, invalid inputs, failures, and recovery. Given/When/Then is
+optional. MAY rules cover both supported/enabled behavior and valid absent/disabled outcomes.
 
-Other sections are optional; omit them when empty. Use MUST, MUST NOT, and MAY
-deliberately. Keep implementation, plans, and chronological decision history
-outside `spec/`. In tests or verification reports, reference the capability path
-and rule name so acceptance coverage can be checked; no separate traceability
-document or numeric IDs are required.
+Other sections are optional; omit empty ones. Use MUST, MUST NOT, and MAY deliberately.
+Keep implementation, plans, and chronological decisions outside `spec/`. Tests/
+verification reference capability path and rule name for acceptance coverage;
+no separate traceability document or numeric IDs required.
 
 ## Section vocabulary
 

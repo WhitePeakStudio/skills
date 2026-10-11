@@ -5,22 +5,20 @@ description: Rules and folder templates for writing, organizing, and reviewing r
 
 # Documentation
 
-`docs/` explains how to use, understand, develop, and operate the system.
-Organize content by reader need using [Diátaxis](https://diataxis.fr/start-here/).
-Maintain documentation as code: versioned Markdown, reviewed alongside changes,
-with the repository's documentation checks when available.
+`docs/` explains system use, understanding, development, and operation. Organize
+by reader need using [Diátaxis](https://diataxis.fr/start-here/). Maintain versioned
+Markdown, review alongside changes, and run available repository documentation checks.
 
 ## Boundaries
 
-When `spec/` exists, it owns required behavior and acceptance criteria. Link to
-the relevant capability rather than duplicating normative rules in `docs/`.
-Documentation describes current behavior and practical use. If code, specs, and
-documentation disagree, report the discrepancy; do not silently redefine the
-contract or describe intended behavior as implemented.
+When `spec/` exists, it owns required behavior/acceptance; link capabilities instead
+of duplicating normative rules. Document current behavior and practical use. Report
+code/spec/docs discrepancies; never silently redefine contracts or present intended
+behavior as implemented.
 
-Keep the root README as the project introduction and link it to `docs/README.md`.
-Keep plans, work logs, and temporary investigation notes outside maintained
-documentation unless the repository explicitly gives them a home.
+Keep root README as project introduction, linking `docs/README.md`. Plans, work
+logs, and temporary investigations stay outside maintained docs unless the
+repository explicitly provides a home.
 
 ## Files
 
@@ -37,19 +35,16 @@ docs/
 `-- assets/            Images and diagrams referenced by pages
 ```
 
-Create only directories and pages with useful content. Small documentation sets
-can start with an index and a few pages. Preserve established organization when
-it serves readers; adopting this skill alone does not require a migration.
-The tree is a repository convention, not a mandatory Diátaxis layout.
+Create only useful directories/pages; small sets can start with an index and a few
+pages. Preserve organization that serves readers; skill adoption requires no migration.
+This tree is a repository convention, not a mandatory Diátaxis layout.
 
-Use one page per cohesive reader need, with descriptive lowercase hyphenated
-filenames. Add a topic subfolder when it groups several related pages and
-improves navigation. Reference hierarchy may follow the interface it describes;
-other sections should follow reader tasks and concepts rather than code folders.
+Use one page per cohesive reader need, with descriptive lowercase hyphenated names.
+Topic subfolders must group several related pages and improve navigation. Reference
+hierarchy may follow interfaces; other sections follow reader tasks/concepts, not code folders.
 
-For multi-file documentation, `docs/README.md` MUST identify the audience and
-provide an index grouped by purpose with relative links. Use this template,
-omitting empty groups:
+For multi-file docs, `docs/README.md` MUST identify the audience and index pages
+by purpose with relative links. Use this template; omit empty groups:
 
 ```markdown
 # Documentation
@@ -73,8 +68,7 @@ Short description of the system and who this documentation serves.
 - [Architecture](explanation/architecture.md): Components and tradeoffs.
 ```
 
-Adapt the links to real pages. Keep details in their pages rather than repeating
-them in the index. Link optional decision records when present.
+Link real pages and optional decision records when present; keep page details out of the index.
 
 ## Page types
 
@@ -90,9 +84,8 @@ Choose the type before writing:
 - **Explanation:** Explain concepts, relationships, reasons, and tradeoffs.
   Link to procedures and reference details rather than embedding them.
 
-Split substantial content serving different needs into linked pages. Every page
-needs a descriptive title and a short statement of purpose; other headings
-depend on its type. Omit empty or irrelevant sections.
+Split substantial distinct reader needs into linked pages. Require a descriptive
+title and short purpose per page; other headings depend on type. Omit empty/irrelevant sections.
 
 A how-to guide can start from:
 
@@ -144,19 +137,17 @@ Chosen approach and reasons.
 Benefits, costs, and follow-up implications.
 ```
 
-Decision records preserve history. Supersede accepted decisions with linked
-records when choices change; keep current architecture in `explanation/`.
+Preserve decision history: supersede changed accepted decisions with linked records;
+keep current architecture in `explanation/`.
 
 ## Editing
 
 1. Read the affected pages, index, and relevant sources or specifications.
-2. Choose the reader need and canonical page. Link to existing content instead
-   of copying it; use relative links within the repository.
-3. Update obsolete guidance and affected examples, navigation, and cross-links.
-   State version or environment assumptions when they affect applicability.
-4. Verify technical claims against available evidence. Check commands and
-   examples where practical without performing unauthorized external actions.
-   Mark unresolved gaps explicitly rather than inventing details.
-5. Check broken links, missing assets, duplicate or conflicting text, and leftover
-   template content. Run existing documentation checks when applicable. Report
-   changes and any verification limits.
+2. Choose reader need/canonical page; link existing content rather than copying,
+   using relative repository links.
+3. Update obsolete guidance and affected examples/navigation/cross-links. State
+   version/environment assumptions affecting applicability.
+4. Verify claims against evidence; check commands/examples where practical without
+   unauthorized external actions. Mark unresolved gaps; never invent details.
+5. Check links, assets, duplicate/conflicting text, and leftover templates. Run
+   applicable documentation checks; report changes and verification limits.
