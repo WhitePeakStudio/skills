@@ -105,59 +105,47 @@ extra reports, or orchestration service.
 
 ## Stage
 
-README advisory correction complete; ready for fresh independent implementation
-review of this corrective commit. Prior verdict `pass` applies only to reviewed
-input `e10d3caf84e44208f71e12e0b97ec2e1ce3c7f8f`, not this later correction.
+Independent correction review complete: verdict `pass` for exact reviewed input
+`45751cc2075ab1805da5990d10ef739a24ce5459`. The later review-note commit is a
+separate handoff and does not extend approval to substantive later changes.
 Entry checks verified the assigned absolute checkout, branch
-`task/workflow-skills-8c419e2a`, clean tracked/untracked status, and exact input HEAD
-`7df4c15ff4fa92703346a5909b8b7e878b4a5f40`.
-Plan-review acceptance remains for plan input
+`task/workflow-skills-8c419e2a`, empty tracked/untracked status, and HEAD equal to
+that input. Plan-review acceptance remains for plan input
 `9d634387d6c57d72cef78604230431a5e9fe7891`.
 External delivery and final task-note cleanup remain with the orchestrator.
 
 ## Latest findings and evidence
 
-- Blocking findings: none. Inspected the full product diff from base
-  `fbc226fd4532fa7ca85c75d8b24e4df59a9ac86d` through the reviewed implementation
-  input, all five new skill instructions, README/manifest, and existing skill and
-  marketplace sources. Changes follow the accepted scope and plan.
-- Lifecycle review: sequential fresh-context dispatch, dirty/mismatched entry
-  stops, exact reviewed-SHA attribution distinct from review-note commits,
-  author/reviewer correction routing, renewed plan gate for scope changes,
-  missing-decision waits, bounded stalled corrections, and recoverable delivery
-  form a coherent protocol. Note-only review commits and the final bookkeeping
-  deletion do not implicitly approve substantive changes.
-- Re-ran external work/validate_package.py against this checkout: all seven
-  frontmatters, 15 prose local links/anchors, exact five new directory contents,
-  JSON/metadata identity, unchanged existing skills/marketplace bytes, and
-  whitespace checks passed. Base-to-input changed paths contain only README,
-  plugin manifest, five skills, and the temporary task note.
-- Inspected external work/workflow-check-b055f0da/verification.json: ten Git
-  mechanics checks report passing concurrent isolation, both correction
-  sequences, reviewed ancestry, dirty cleanup refusal, zero note net diff,
-  preserved history, failed push recovery, local push, and clean worktree
-  cleanup retaining the branch. These are disposable-repository checks with a
-  local bare remote; no live hosted PR is claimed.
-- Verified additional fixture states in external
-  work/behavior-check-a4c26186/sample-tasks: dirty-3be2d26d retains
-  `?? unrelated.txt` and its initial commit; undecided-0adc471a has a clean
-  note-only planning commit recording missing policy/implementation decisions
-  and paused dependent work; stalled-b8553e75 retains its initial commit and
-  two unchanged corrective attempts. The orchestrator reports that these were
-  fresh-context behavioral runs using the delivered skills; this reviewer
-  independently verified their resulting Git/note states, not every agent turn.
-- Nonblocking advisory addressed: README now permits individual standalone
-  installation of specbook/docbook and requires all five task-* skills together
-  with their sibling directory layout preserved. This matches the roles' shared
-  protocol link and the orchestrator's four role links; no behavior changed.
-- Correction validation: README prose local links resolve and `git diff --check`
-  passes. The corrective diff changes only README installation wording and this
-  task note. Fresh independent review remains pending.
+- Blocking findings: none. Independently inspected the correction against the
+  accepted scope/plan and prior product review at
+  `7df4c15ff4fa92703346a5909b8b7e878b4a5f40`. The corrective commit changes only
+  README installation wording and the task note. Since the earlier reviewed
+  implementation `e10d3caf84e44208f71e12e0b97ec2e1ce3c7f8f`, product changes are
+  confined to the same README paragraph; all skill instructions are unchanged.
+- Advisory resolved: README limits individual standalone installation to
+  specbook/docbook and directs installation of all five task-* skills together
+  with their sibling directory layout preserved. Independently checked each
+  role's shared-protocol link to task-orchestrate and the orchestrator's links
+  to all four roles. The wording accurately reflects these dependencies and
+  changes no workflow semantics or accepted plan.
+- Re-ran external `work/validate_package.py` against the exact input checkout:
+  seven valid frontmatters, 15 prose local links/anchors, exact five new skill
+  directory contents, JSON/metadata identity, byte-for-byte preserved existing
+  skills/marketplace, and diff whitespace checks all passed.
+- Prior full product review passed for
+  `e10d3caf84e44208f71e12e0b97ec2e1ce3c7f8f`, including coherent lifecycle rules
+  and accepted package scope. Its evidence records ten disposable Git mechanics
+  checks at external `work/workflow-check-b055f0da/verification.json`, using a
+  local bare remote, plus independently inspected dirty, undecided, and stalled
+  fixture states at external `work/behavior-check-a4c26186/sample-tasks`.
+  Those behavioral scenarios were not rerun for this documentation-only
+  correction; their recorded evidence remains applicable because skills did
+  not change. No live hosted PR is claimed.
 
 ## Decisions and open issues
 
-- No material decision or blocking implementation issue remains; the README
-  advisory correction awaits fresh independent review of its exact commit.
-- Hosted PR creation is outside this local correction's evidence.
+- Verdict `pass` for `45751cc2075ab1805da5990d10ef739a24ce5459`; no material
+  decision, blocking issue, or unresolved advisory remains.
+- Hosted PR creation is outside this local review's evidence.
 - Orchestrator owns authorized delivery and task-note removal. Any substantive
   product correction requires independent review of its new exact commit.
