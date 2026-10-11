@@ -98,6 +98,10 @@ while preserving accepted assessment blocks and valid review records. The
 orchestrator checks the same consistency alongside the existing gate before
 accepting a handoff or dispatching; inconsistent notes return to the writer and
 block dependent work.
+Freshness-only repair continues the same assignment: authors use their role prefix;
+reviewers use a note-only `task:` commit, preserving assessment blocks and review
+records so the findings commit stays attached to its input. Substantive corrections
+follow the normal author/review loop.
 Update stage/evidence, stage authorized files only, commit with configured signing,
 and verify commit/clean status. Even documentation no-change decisions require a
 note commit and independent review. Roles never push or open PRs. Return only
