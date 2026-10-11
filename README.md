@@ -97,8 +97,10 @@ Use task-orchestrate to implement this repository change with plan and implement
 ```
 
 Hosts that support portable Agent Plugins can load the root package. Standalone
-skill installers can use any individual `skills/<name>` directory. Specbook and
-docbook retain their existing instructions and replace the previous top-level paths.
+skill installers can install `skills/specbook` or `skills/docbook` individually.
+For the task workflow, install all five `task-*` skills together, preserving their
+sibling directory layout. Specbook and docbook retain their existing instructions
+and replace the previous top-level paths.
 
 ## Maintain
 

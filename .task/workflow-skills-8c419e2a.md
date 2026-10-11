@@ -105,11 +105,12 @@ extra reports, or orchestration service.
 
 ## Stage
 
-Independent implementation review complete: verdict `pass` for reviewed input
-`e10d3caf84e44208f71e12e0b97ec2e1ce3c7f8f`. This exact input is the approved
-implementation artifact; the later review-note commit is a separate handoff.
+README advisory correction complete; ready for fresh independent implementation
+review of this corrective commit. Prior verdict `pass` applies only to reviewed
+input `e10d3caf84e44208f71e12e0b97ec2e1ce3c7f8f`, not this later correction.
 Entry checks verified the assigned absolute checkout, branch
-`task/workflow-skills-8c419e2a`, clean tracked/untracked status, and exact HEAD.
+`task/workflow-skills-8c419e2a`, clean tracked/untracked status, and exact input HEAD
+`7df4c15ff4fa92703346a5909b8b7e878b4a5f40`.
 Plan-review acceptance remains for plan input
 `9d634387d6c57d72cef78604230431a5e9fe7891`.
 External delivery and final task-note cleanup remain with the orchestrator.
@@ -145,19 +146,18 @@ External delivery and final task-note cleanup remain with the orchestrator.
   two unchanged corrective attempts. The orchestrator reports that these were
   fresh-context behavioral runs using the delivered skills; this reviewer
   independently verified their resulting Git/note states, not every agent turn.
-- Nonblocking advisory: README's individual-directory standalone installation
-  wording is broader than workflow portability. Each role references sibling
-  task-orchestrate; the orchestrator references all four roles. Disposition:
-  orchestrator elected a follow-up README clarification and fresh review;
-  supported validation is for
-  the complete package, and acceptance does not require independently installed
-  workflow roles. Recommend clarifying that standalone workflow installation
-  must preserve the sibling skill family. No style-only changes are required.
+- Nonblocking advisory addressed: README now permits individual standalone
+  installation of specbook/docbook and requires all five task-* skills together
+  with their sibling directory layout preserved. This matches the roles' shared
+  protocol link and the orchestrator's four role links; no behavior changed.
+- Correction validation: README prose local links resolve and `git diff --check`
+  passes. The corrective diff changes only README installation wording and this
+  task note. Fresh independent review remains pending.
 
 ## Decisions and open issues
 
-- Verdict `pass`; no material decision or blocking implementation issue remains.
-- Standalone workflow installation wording has an elected follow-up correction
-  and fresh review pending, as recorded above. Hosted PR creation is outside this local review's evidence.
+- No material decision or blocking implementation issue remains; the README
+  advisory correction awaits fresh independent review of its exact commit.
+- Hosted PR creation is outside this local correction's evidence.
 - Orchestrator owns authorized delivery and task-note removal. Any substantive
   product correction requires independent review of its new exact commit.
