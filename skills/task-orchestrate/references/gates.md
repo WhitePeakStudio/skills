@@ -92,8 +92,8 @@ or reviewer identity/correctness; reviewers remain responsible for those judgmen
 Put objective, scope, acceptance, plan, and authoritative references between
 `<!-- task-contract:start -->` and `<!-- task-contract:end -->`. Put documentation
 assessment/no-change rationale between `<!-- task-documentation:start -->` and
-`<!-- task-documentation:end -->` (initially empty). Keep evidence, findings, stage
-details, and model selections outside those blocks. Compare block text exactly;
+`<!-- task-documentation:end -->` (initially empty). Keep evidence, findings,
+and model selections outside those blocks. Compare block text exactly;
 even whitespace edits require reassessment. Bookkeeping outside them does not.
 
 All gates assess the contract block; documentation also assesses the documentation

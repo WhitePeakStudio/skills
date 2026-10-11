@@ -88,18 +88,22 @@ actual purpose/content: skill sources and executable examples can be implementat
 regardless of extension/directory. Never silently cross boundaries. Create only
 useful task-required spec/docs content; no empty scaffolds or unrelated migrations.
 
-Before each handoff commit, every writer refreshes the whole current-state note:
-remove superseded findings/evidence and stale stage/readiness claims across all
-roles. Retain current decisions, unresolved issues, relevant verification evidence,
-accepted references, and valid review records; Git retains prior runs. Keep
-stage/readiness claims outside assessment blocks, and preserve accepted block text
-when refreshing bookkeeping. The orchestrator checks the note is current before dispatch.
+In the note, YAML alone owns workflow stage, review verdicts, and blocker/decision/
+recovery status. Do not repeat them as prose readiness, pending/pass, next-action,
+or "no issues" claims. Prose holds current findings and verification evidence tied
+to input commits; Git retains prior runs.
+Freshness is a handoff condition: before committing, every writer reconciles the
+whole note with current YAML and verified artifacts, removing superseded claims
+while preserving accepted assessment blocks and valid review records. The
+orchestrator checks the same consistency alongside the existing gate before
+accepting a handoff or dispatching; inconsistent notes return to the writer and
+block dependent work.
 Update stage/evidence, stage authorized files only, commit with configured signing,
 and verify commit/clean status. Even documentation no-change decisions require a
 note commit and independent review. Roles never push or open PRs. Return only
 `Status`, `Commit`, `Result`, `Evidence`, `Open issues`. Status (`complete`,
 `blocked`, `needs-decision`) concerns assignment completion; review verdict
-(`pass`, `revise`, `needs-decision`) belongs in Result and note.
+(`pass`, `revise`, `needs-decision`) belongs in Result and the note's YAML record.
 Commit prefixes: `plan:`, `review-plan:`, `implement:`,
 `review-implementation:`, `document:`, `review-documentation:`.
 Set stage to the next action under the gate contract. Reviewers replace their latest
