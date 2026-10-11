@@ -8,7 +8,8 @@ description: Implement an independently accepted task plan and authoritative spe
 Read the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol) and
 [gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Verify assigned
 path, branch, clean tracked/untracked status, and exact input HEAD before writing;
-stop on mismatch and preserve changes.
+stop on mismatch and preserve changes. Only an explicit recovery assignment may
+use the shared interrupted-role exception to the clean-input check.
 
 Confirm the note's passing plan review remains valid against the current plan
 and specifications by comparing its exact reviewed reference and assessed

@@ -8,7 +8,8 @@ description: Update repository documentation after accepted implementation, or c
 Read the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol) and
 [gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Verify assigned
 path, branch, clean tracked/untracked status, and exact input HEAD before writing;
-stop on mismatch and preserve changes.
+stop on mismatch and preserve changes. Only an explicit recovery assignment may
+use the shared interrupted-role exception to the clean-input check.
 
 Before documentation writes, inspect prerequisites and code/contract discrepancies
 and confirm retained plan and implementation passes remain valid against their exact

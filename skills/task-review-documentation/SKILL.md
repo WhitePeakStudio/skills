@@ -8,7 +8,8 @@ description: Independently review an exact documentation commit or no-change dec
 Read the [shared role protocol](../task-orchestrate/SKILL.md#role-protocol) and
 [gate rules](../task-orchestrate/SKILL.md#gates-and-corrections). Verify assigned
 path, branch, clean tracked/untracked status, and exact input HEAD before writing;
-stop on mismatch, preserving changes.
+stop on mismatch, preserving changes. Only an explicit recovery assignment may
+use the shared interrupted-role exception to the clean-input check.
 
 Validate retained plan and implementation passes by comparing their exact reviewed
 SHAs and assessed artifacts with current content; inspect actual diffs, including
@@ -23,6 +24,9 @@ missing structures. Independently assess an evidenced no-change decision. Check
 prior findings/advisory dispositions. Route documentation defects to documenter;
 code defects to implementer/reviewer; contract/plan changes to planner/reviewer.
 Upstream correction requires fresh documentation checks and review.
+
+Review cumulative changes in your scope from the recorded task base to this
+input SHA under the shared review rules, not just the latest corrective commit.
 
 Write only `.task/<id>.md`: record verdict `pass`, `revise`, or `needs-decision`,
 exact documentation input SHA, assessed artifacts/no-change rationale, findings,
