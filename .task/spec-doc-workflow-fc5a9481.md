@@ -59,7 +59,11 @@ actual PR publication is checked separately.
 
 Plan review: pass. Reviewed input: `87320f51efbe996cf396b17a6179fd0c1e7ed2ac`.
 Plan assessed artifacts: objective/scope, acceptance, plan and verification in this note; supplied contract and existing package boundaries. These remain unchanged.
-Implementation: complete; ready for independent implementation review of this commit. Implementation and documentation gates pending.
+Implementation review: pass. Reviewed input: `47bb45808da207cd855346e4c89c8fc259436af8`.
+Implementation assessed artifacts: the seven task skill entrypoints and plugin.json;
+accepted plan/scope/acceptance/verification remain unchanged against the plan input.
+Ready for mandatory documentation and independent documentation review; that gate
+is pending, including the README dependency/installation update.
 
 ## Latest findings, evidence and decisions
 
@@ -103,3 +107,51 @@ work/workflow-check-eab0132f/verification.json (local simulated delivery).
 Fresh-context behavior fixtures and live hosted delivery belong to subsequent
 roles/root; no behavioral or live publication result claimed here.
 No open implementation decision. Input: e1ddd4acc9d2f19c26ae32ae8337c1b7e4b32a83.
+
+## Implementation review findings and evidence
+
+Verdict: **pass** for exact input
+`47bb45808da207cd855346e4c89c8fc259436af8`; no blocking findings or missing material
+decisions. Reviewed against base `e9e7ae1f8f4f0c9703408c9a4525288c46695f2b` and
+accepted plan input `87320f51efbe996cf396b17a6179fd0c1e7ed2ac`. Objective/scope,
+acceptance, plan and verification sections are unchanged, so the plan pass remains
+valid. Assigned absolute path, branch, exact HEAD and empty tracked/untracked
+status were verified before writing.
+
+Assessed files: `skills/task-orchestrate/SKILL.md`, `skills/task-plan/SKILL.md`,
+`skills/task-review-plan/SKILL.md`, `skills/task-implement/SKILL.md`,
+`skills/task-review-implementation/SKILL.md`, `skills/task-document/SKILL.md`,
+`skills/task-review-documentation/SKILL.md`, and `plugin.json`. Read unchanged
+specbook/docbook and README as dependency/boundary context.
+
+Concrete evidence: planner uses specbook for affected capability contracts and
+named-rule acceptance/verification; plan reviewer assesses those contracts or
+the evidenced no-contract-change decision. Implementation reserves spec/docs work
+for their authors. Shared protocol classifies sources by actual purpose, keeps
+reviewers note-only, preserves all three exact assessed references, and invalidates
+affected gates on substantive artifact changes rather than HEAD advancement.
+Documenter and documentation reviewer use docbook, assess actual accepted behavior,
+route contract/code discrepancies upstream, and require fresh documentation checks
+after correction. Every task commits and independently reviews even an evidenced
+documentation no-change decision. Delivery requires all three valid passes.
+Fresh-context sequential roles, dirty-handoff preservation, decision/stalled-loop
+controls, isolated worktrees and recoverable failed delivery remain explicit.
+
+Independent absolute-path run of `work/validate_package.py <worktree> 0.3.0`
+passed: nine frontmatters, 31 local links/anchors, preserved specialist/catalog
+bytes, metadata identity and 0.3.0 version. Base-to-input `git diff --check` passed.
+Read `work/workflow-check-eab0132f/verification.json`: ten Git lifecycle passes;
+it explicitly limits delivery to local simulation and excludes agent decisions.
+
+Accounted-for advisory: README is deliberately unchanged until the next authorized
+role. Its five-task-skill standalone installation guidance must become seven task
+skills plus specbook/docbook together, preserving sibling layout because direct
+relative links now require those specialist dependencies. This is the accepted
+documentation-stage requirement, not a product-source blocker. The approved
+package-specific no-new-spec/README-only decisions have not become general
+exemptions in the role sources.
+
+Limits: behavioral fixtures remain root-owned and in progress; this review records
+source inspection and static/Git evidence, not fresh behavioral fixture execution
+or live hosted publication. Documentation gate remains pending; delivery is not
+approved by this pass.
