@@ -59,15 +59,18 @@ actual PR publication is checked separately.
 
 Plan review: pass. Reviewed input: `87320f51efbe996cf396b17a6179fd0c1e7ed2ac`.
 Plan assessed artifacts: objective/scope, acceptance, plan and verification in this note; supplied contract and existing package boundaries. These remain unchanged.
-Implementation review: prior pass invalidated by the task-document product
-instruction correction below; fresh independent implementation review pending.
-Retained reviewed input: `47bb45808da207cd855346e4c89c8fc259436af8`.
-Implementation assessed artifacts: the seven task skill entrypoints and plugin.json;
-accepted plan/scope/acceptance/verification remain unchanged against the plan input.
+Implementation review: pass for exact input
+`05a0fe89defb8bcee8f1b90404051cddc6ec1716`; current assessed artifacts are the
+seven task skill entrypoints and plugin.json. Prior reviewed input
+`47bb45808da207cd855346e4c89c8fc259436af8` remains retained as historical evidence;
+its pass was invalidated by the task-document instruction correction. The fresh
+pass assesses that correction and all implementation acceptance against the
+unchanged accepted plan/scope/acceptance/verification.
 Prior documentation completed at `5f37323a45d958fabf6fa9411328090dc978cb53`;
-its readiness assessment is invalidated by the product instruction correction.
-Documentation and its independent review are pending after a fresh implementation
-pass; README remains untouched by this correction and must be reassessed then.
+its readiness assessment remains invalidated by the product instruction correction.
+Documentation reassessment and independent documentation review are now pending
+against the corrected accepted implementation, including an evidenced no-change
+result if appropriate. README is unchanged by the correction and this review.
 
 ## Latest findings, evidence and decisions
 
@@ -217,3 +220,57 @@ Validation: nine frontmatters, 35 local links/anchors, package metadata and
 preserved specialist/catalog bytes passed the package validator; diff --check
 passed. Behavioral recheck belongs to root; no new fixture or publication result
 is claimed. No unresolved implementation decision.
+
+
+## Corrective implementation review findings and evidence
+
+Verdict: **pass** for exact input
+`05a0fe89defb8bcee8f1b90404051cddc6ec1716`. No blocking finding or missing
+material decision. Verified assigned absolute worktree, branch, clean tracked and
+untracked status, and exact input HEAD before writing. This reviewer edits only
+the task note; its commit is distinct from the reviewed input.
+
+Assessed current product files: `skills/task-orchestrate/SKILL.md`,
+`skills/task-plan/SKILL.md`, `skills/task-review-plan/SKILL.md`,
+`skills/task-implement/SKILL.md`, `skills/task-review-implementation/SKILL.md`,
+`skills/task-document/SKILL.md`, `skills/task-review-documentation/SKILL.md`, and
+`plugin.json`. Read preserved specialist skills and current README as context.
+Compared the note with accepted plan input
+`87320f51efbe996cf396b17a6179fd0c1e7ed2ac`: objective/scope, acceptance, plan and
+verification are unchanged, so that plan pass remains valid. Against prior
+implementation input `47bb45808da207cd855346e4c89c8fc259436af8`, the only product
+change is the reviewed task-document guard; other changes are README and note.
+
+The guard orders prerequisite and discrepancy inspection before documentation
+writes. Missing or stale retained plan/implementation passes and discrepancies
+requiring code/contract correction explicitly return a committed note-only blocker
+with upstream routing before documentation edits. Independent investigation stays
+read-only until required passes; documentation-only defects remain authorized.
+Entry-path/branch/HEAD or dirty-state mismatch still stops while preserving changes.
+The later general documentation instructions do not override this precondition.
+This resolves the recorded premature-documentation finding at source level.
+
+Rechecked all implementation acceptance: affected contracts use specbook and named
+rule coverage; author/reviewer write boundaries and actual-content classification
+are explicit; documentation and independent review always follow implementation
+pass, including committed no-change decisions. All three exact gate records and
+artifact-based validity survive bookkeeping descendants, while substantive changes
+invalidate affected/downstream gates. Useful minimal spec/docs creation, sequential
+fresh-context roles, isolation, dirty handoff, stalled-loop, decisions, failed
+delivery and clean cleanup behavior remain required. Delivery waits for three
+valid passes. Version 0.3.0 and Repository Skills identity are preserved.
+The prior installation advisory is addressed in README (seven task skills plus
+both specialists together), but its downstream assessment must still be rerun.
+Package-specific no-new-spec/README-only decisions remain scoped to this task.
+
+Independent focused run of `work/validate_package.py <worktree> 0.3.0` passed:
+nine frontmatters, 35 local links/anchors, preserved specialist/catalog bytes,
+metadata identity/version and diff check. Base-to-input `git diff --check` also
+passed. Read the existing Git lifecycle fixture evidence: ten passes, explicitly
+limited to local delivery simulation and Git mechanics.
+
+Limits: this review verifies product instructions and static/Git evidence; it does
+not claim fresh execution of the behavioral recheck or live hosted publication.
+Root owns that behavioral evidence. Documentation reassessment and its independent
+review remain pending, so this pass does not approve delivery. No unresolved
+implementation issue remains.
