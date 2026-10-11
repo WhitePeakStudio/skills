@@ -57,7 +57,8 @@ actual PR publication is checked separately.
 
 ## Stage and accepted reviews
 
-Plan ready for independent review. No implementation yet.
+Plan review: pass. Reviewed input: `87320f51efbe996cf396b17a6179fd0c1e7ed2ac`.
+Ready for implementation at the ensuing clean review-note commit; no implementation yet.
 
 ## Latest findings, evidence and decisions
 
@@ -66,3 +67,23 @@ No .codegraph exists. Use command-local safe.directory; preserve signed commits
 (signing requires escalated execution on this Windows host).
 Both doc stages always run; create minimal missing structures as needed.
 No unresolved user decision. Role subagents do not publish; root is authorized.
+
+## Plan review findings and evidence
+
+Verdict: **pass** for input `87320f51efbe996cf396b17a6179fd0c1e7ed2ac`.
+No blocking findings or missing material decisions.
+
+Read all five current task skills, specbook, docbook, README, plugin.json and
+marketplace metadata. Exact assigned path/branch/HEAD and clean tracked/untracked
+status verified. Scope is feasible as instruction-only changes: seven task skills,
+nine total skill frontmatters, metadata version 0.3.0 and subsequent README update.
+Acceptance defines each role's write boundary, mandatory documentation/no-change
+review, three retained reviewed SHAs, artifact-based gate invalidation and upstream
+correction routing. Existing failure, decision and cleanup controls remain explicit.
+
+Advisory disposition: the approved package-specific choice to avoid duplicating
+this supplied contract in a new product spec, and to update README only, is scoped
+to this repository change. It must not become a general exemption from specbook,
+docbook, useful missing structures or their rules in the evolved task skills.
+Verification must exercise those general rules in disposable task repositories.
+Fixture delivery remains simulated; live delivery evidence belongs to root.
