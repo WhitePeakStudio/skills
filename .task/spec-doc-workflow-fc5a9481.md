@@ -68,9 +68,9 @@ pass assesses that correction and all implementation acceptance against the
 unchanged accepted plan/scope/acceptance/verification.
 Prior documentation completed at `5f37323a45d958fabf6fa9411328090dc978cb53`;
 its readiness assessment remains invalidated by the product instruction correction.
-Documentation reassessment and independent documentation review are now pending
-against the corrected accepted implementation, including an evidenced no-change
-result if appropriate. README is unchanged by the correction and this review.
+Documentation reassessment: complete with an evidenced no-change decision against
+the corrected accepted implementation. Stage: ready for independent documentation
+review (ready-docreview). README remains unchanged; documentation review is pending.
 
 ## Latest findings, evidence and decisions
 
@@ -274,3 +274,41 @@ not claim fresh execution of the behavioral recheck or live hosted publication.
 Root owns that behavioral evidence. Documentation reassessment and its independent
 review remain pending, so this pass does not approve delivery. No unresolved
 implementation issue remains.
+
+
+## Documentation reassessment evidence
+
+Input: `1b6bd4b2cb74ca8d442ced1435da704fc4a5c601`. Verified assigned absolute
+worktree, branch, exact HEAD and empty tracked/untracked status before writing.
+Used task-document and docbook. Before documentation writes, confirmed retained
+plan and implementation passes remain valid and inspected current sources for
+code/contract discrepancies. No upstream discrepancy or missing decision found.
+
+No-change decision: README already accurately describes all nine skills and seven
+workflow roles; specification planning and independent documentation review; all
+seven task skills plus specbook/docbook installed together in sibling layout;
+three valid delivery gates; committed/reviewed documentation no-change decisions;
+actual-content write boundaries; upstream correction routing; and retained exact
+review references with artifact-based validity. Read all seven current task skill
+entrypoints and plugin.json against these claims. The corrected task-document
+precondition adds ordering and note-only blocking detail consistent with README's
+accepted-implementation prerequisite and linked role/gate rules; it does not make
+README guidance obsolete. No additional docs/scaffold is useful in this scoped
+instruction-only package task. README therefore needs no edit.
+
+Plan reference `87320f51efbe996cf396b17a6179fd0c1e7ed2ac` remains valid:
+objective/scope, acceptance, plan and verification sections are unchanged in the
+note diff. Current implementation reference
+`05a0fe89defb8bcee8f1b90404051cddc6ec1716` remains valid: comparison of skills/
+and plugin.json produced no diff. Historical implementation reference
+`47bb45808da207cd855346e4c89c8fc259436af8` and prior documentation completion
+`5f37323a45d958fabf6fa9411328090dc978cb53` retain their recorded invalidity after
+the instruction correction. This reassessment replaces the stale documentation
+readiness; it does not claim an independent documentation pass.
+
+Focused package validation passed: nine frontmatters, 35 local links/anchors,
+metadata 0.3.0 / Repository Skills, preserved specialist/catalog bytes, and diff
+check. Only this task note changed; README, implementation, tests and contracts
+remain untouched. Stage: ready-docreview. Independent documentation review is
+pending. Behavioral fixtures and live publication remain root-owned; no new
+behavioral or hosted delivery result is claimed. Open issues: none.
