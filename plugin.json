@@ -1,25 +1,27 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "skills",
-  "version": "0.6.0",
-  "description": "Maintain repository specifications and documentation, coordinate isolated task workflows, and optimize skill token costs while preserving instructions.",
+  "version": "0.7.0",
+  "description": "Capture and refine GitHub issues, maintain specifications and documentation, coordinate isolated task workflows, and optimize skill token costs.",
   "author": {
     "name": "jb-perrier",
     "url": "https://github.com/jb-perrier"
   },
   "repository": "https://github.com/jb-perrier/skills",
-  "keywords": ["documentation", "specifications", "diataxis", "skill-optimization"],
+  "keywords": ["documentation", "specifications", "diataxis", "skill-optimization", "issues"],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Repository Skills",
-        "shortDescription": "Specs, docs, task workflows, and skill optimization",
+        "shortDescription": "Issue refinement, specs, docs, tasks, and optimization",
         "developerName": "jb-perrier",
         "category": "Productivity",
         "defaultPrompt": [
           "Use specbook to write or review capability specifications in spec/.",
           "Use docbook to write or organize documentation in docs/.",
           "Use skill-optimize to reduce skill tokens while preserving instructions and report comparable before/after counts.",
+          "Use issue-create to capture a request in the selected backlog using its repository conventions.",
+          "Use issue-refine to clarify an issue, split coherent deliveries when needed, and return Ready issue URLs.",
           "Use task-orchestrate to coordinate an isolated repository task through specification planning, implementation, documentation, and all three review gates to a pull request."
         ]
       }

@@ -1,6 +1,6 @@
 # Repository Skills
 
-An Agent Plugins package for specifications, documentation,
+An Agent Plugins package for issue intake/refinement, specifications, documentation,
 isolated repository tasks, and skill optimization, with an optional token-counting
 script.
 
@@ -10,6 +10,10 @@ script.
   guidance, folder and page templates, and maintenance rules.
 - [skill-optimize](skills/skill-optimize/SKILL.md): Standalone skill compression
   with comparable token measurements and checks for preserved meaning.
+- [issue-create](skills/issue-create/SKILL.md): Capture requests as backlog issues
+  or drafts, respecting repository ownership and avoiding duplicates.
+- [issue-refine](skills/issue-refine/SKILL.md): Research and clarify issues, split
+  coherent deliveries when needed, and prepare actionable leaves as Ready.
 - [task-orchestrate](skills/task-orchestrate/SKILL.md): Coordinate isolated tasks
   through fresh-context roles and pull-request delivery.
 - [task-plan](skills/task-plan/SKILL.md): Write affected specifications and the
@@ -30,6 +34,30 @@ documentation explains how to use, understand, develop, and operate the system.
 Skill optimization works independently of the task workflow: it proposes a
 compact revision, or edits the source when requested. It reports the tokenizer,
 measurement scope, savings and verification; unavailable exact counts are explicit.
+
+## Issue preparation
+
+Use `issue-create` to capture, then `issue-refine` to prepare work. Follow existing
+repository conventions: early ideas can be project drafts; cross-repository
+initiatives live in the planning repository with implementation children in their
+target repositories; single-repository work stays in that repository. Resolve
+destinations/project from instructions and context, not hardcoded personal IDs.
+
+The issue brief holds Outcome, Scope, Acceptance, and Context. Refinement researches
+only relevant sources and splits independently verifiable deliveries, not workflow
+roles. Native parent/child relationships and blocking dependencies remain distinct.
+Only actionable leaves with clear requirements and satisfied dependencies become
+`Ready`; unresolved work stays `Backlog`. Refinement returns URLs and never starts
+implementation or approves a specification/implementation plan.
+
+Explicitly give a Ready issue URL to `task-orchestrate`. It records one execution,
+uses the existing worktree and three-review flow, and keeps `In progress` through
+internal loops. A linked PR moves the item to `In review`; only observed merge or
+explicit user acceptance permits `Done`/completed closure on a follow-up. Resume
+recorded work rather than starting another task. Issue changes use normal contract
+correction/review. V1 assumes one dispatcher, without automatic queue selection,
+distributed locking, merge monitoring, or additional project fields/statuses.
+See the conditional [issue handoff](skills/task-orchestrate/references/issues.md).
 
 ## Task workflow
 
@@ -138,8 +166,11 @@ skills/
 |-- specbook/SKILL.md
 |-- docbook/SKILL.md
 |-- skill-optimize/SKILL.md
+|-- issue-create/SKILL.md
+|-- issue-refine/SKILL.md
 |-- task-orchestrate/SKILL.md
 |-- task-orchestrate/references/gates.md
+|-- task-orchestrate/references/issues.md
 |-- task-orchestrate/scripts/check_gate.py
 |-- task-plan/SKILL.md
 |-- task-review-plan/SKILL.md
@@ -151,9 +182,13 @@ skills/
 ```
 
 The root manifest uses the [Agent Plugins schema](https://agent-plugins.org/schemas/1.0.0/plugin.schema.json).
-All ten skills are discovered from `skills/`. OpenAI presentation metadata lives in
+All twelve skills are discovered from `skills/`. OpenAI presentation metadata lives in
 `extensions.com.openai`; the repository also includes a Codex marketplace catalog.
-The package requires no MCP servers or credentials. The task gate checker uses
+The package requires no MCP servers. Issue skills and issue-based orchestration
+require authenticated `gh` with access to the selected repositories/project;
+`gh api` covers capabilities absent from installed CLI commands. They discover
+existing field IDs and verify partial updates before retrying. Direct task inputs
+do not load issue guidance. The task gate checker uses
 Python 3.10+, Git, and PyYAML. The optional skill-optimize
 token-counting script uses Python 3.10+ and `tiktoken`; its setup and usage
 are in the skill. It accepts arbitrary text, files, or stdin independently of
@@ -186,12 +221,17 @@ Select the relevant skill in your agent, or request it by name:
 Use specbook to review the authentication capability in spec/.
 Use docbook to organize the existing documentation in docs/.
 Use skill-optimize to shorten this skill, compare token counts, and preserve its instructions.
+Use issue-create to capture this request in the supplied project's Backlog, following its repository conventions.
+Use issue-refine on <issue-url> (or <project-url> and <draft-item-id>), and return eligible Ready issue URLs.
+Use task-orchestrate to implement the Ready issue at <issue-url> in its target repository.
 Use task-orchestrate to deliver this repository change through specification planning, implementation, documentation, and all three reviews to a PR.
 ```
 
 Hosts that support portable Agent Plugins can load the root package. Standalone
 skill installers can install `skills/specbook`, `skills/docbook`, or
-`skills/skill-optimize` individually. Skill optimization has no sibling skill
+`skills/skill-optimize`, `skills/issue-create`, or `skills/issue-refine` individually.
+The two issue skills operate independently; installing them does not install the
+task workflow. Skill optimization has no sibling skill
 dependencies; exact counting uses a tokenizer available on the host.
 For the task workflow, install all seven `task-*` skills plus `specbook` and
 `docbook` together, preserving their sibling directory layout for relative links.

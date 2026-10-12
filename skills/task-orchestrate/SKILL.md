@@ -8,6 +8,9 @@ description: Coordinate isolated repository tasks through specification planning
 Require Git and fresh-context subagents; report missing capabilities without
 claiming isolation or independent review. Own lifecycle and state; roles write
 sequentially in one isolated task worktree.
+For an explicit issue URL, read [issue handoff](references/issues.md) before
+creating/resuming work and apply it through delivery. Direct task requests do
+not load it; Ready permits planning, not skipping any review gate.
 Read the [role contract](references/role-contract.md), [note state](references/state.md),
 and [gate transitions/checker](references/gates.md). Run the read-only checker before
 normal dispatch and delivery; denial blocks that action. The checker proves local
