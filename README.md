@@ -200,7 +200,7 @@ download tokenizer data on first use.
 Add the repository marketplace:
 
 ```sh
-codex plugin marketplace add jb-perrier/skills
+codex plugin marketplace add WhitePeakStudio/skills
 ```
 
 For a local checkout, run this command from its root instead:
@@ -209,7 +209,7 @@ For a local checkout, run this command from its root instead:
 codex plugin marketplace add .
 ```
 
-Then open the Plugins Directory, select **jb-perrier Skills**, and install
+Then open the Plugins Directory, select **WhitePeakStudio Skills**, and install
 **Repository Skills**. See the [OpenAI plugin packaging guide](https://developers.openai.com/plugins/build/plugins)
 for marketplace and installation details.
 
