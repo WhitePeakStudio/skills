@@ -7,7 +7,7 @@
     "name": "jb-perrier",
     "url": "https://github.com/jb-perrier"
   },
-  "repository": "https://github.com/jb-perrier/skills",
+  "repository": "https://github.com/WhitePeakStudio/skills",
   "keywords": ["documentation", "specifications", "diataxis", "skill-optimization", "issues"],
   "extensions": {
     "com.openai": {
