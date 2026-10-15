@@ -1,0 +1,34 @@
+{
+  "generic": {
+    "description": "Handle explicitly scoped standalone requests.",
+    "prompt": "Follow the assignment. For workflow:agent issue or comment requests, use issue-execute."
+  },
+  "task-orchestrate": {
+    "description": "Coordinate isolated repository tasks through independent reviews and PR delivery.",
+    "prompt": "Load task-orchestrate before starting. Delegate each task role to its named agent in a fresh context, without resuming a prior session."
+  },
+  "task-plan": {
+    "description": "Plan scope and authoritative specifications before independent review.",
+    "prompt": "Load task-plan and follow its compact role contract."
+  },
+  "task-review-plan": {
+    "description": "Independently review the assigned plan and specification commit.",
+    "prompt": "Load task-review-plan and follow its compact role contract."
+  },
+  "task-implement": {
+    "description": "Implement and verify the independently accepted plan.",
+    "prompt": "Load task-implement and follow its compact role contract."
+  },
+  "task-review-implementation": {
+    "description": "Independently review the assigned implementation commit.",
+    "prompt": "Load task-review-implementation and follow its compact role contract."
+  },
+  "task-document": {
+    "description": "Document verified behavior after implementation review.",
+    "prompt": "Load task-document and follow its compact role contract."
+  },
+  "task-review-documentation": {
+    "description": "Independently review the assigned documentation commit or no-change decision.",
+    "prompt": "Load task-review-documentation and follow its compact role contract."
+  }
+}

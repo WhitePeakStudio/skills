@@ -4,6 +4,38 @@ An Agent Plugins package for issue intake/refinement, specifications, documentat
 isolated repository tasks, and skill optimization, with an optional token-counting
 script.
 
+## Custom agents
+
+The plugin also supplies eight Copilot profiles in `com.github.copilot/agents/`:
+`generic`, `task-orchestrate`, and the six task roles. Select `generic` for scoped
+standalone work or `task-orchestrate` for the reviewed repository workflow.
+Task-role profiles are available for delegation; workflow procedures stay in skills.
+
+Edit the compact role definitions in [studio.whitepeak/agents.json](studio.whitepeak/agents.json)
+and shared [organization guidance](studio.whitepeak/organization.md), then run:
+
+```sh
+python scripts/build-agents.py
+python scripts/build-agents.py --check
+```
+
+Commit the generated profiles with their sources. Generation prepends the guidance
+once to every profile; clients do not need prompt imports or shared inheritance.
+The guidance applies to these WhitePeakStudio agents, not to every consumer of the
+generic skills. Installing the plugin makes profiles available; it does not select
+an agent automatically or grant permissions.
+
+The source supports a description, prompt, and optional Copilot `model`. Omitted
+models use Copilot's selection. Agent-runner translates the generated descriptions
+and prompts into OpenCode; its deployment model/reasoning bindings remain authoritative,
+including general-agent mention/label overrides. Copilot model names are not
+translated to OpenRouter IDs. Runner tools, delegation, fresh contexts and environment
+policy remain runner-owned; v1 rejects profile tool/MCP/handoff declarations.
+
+Use the same pinned plugin revision for a job and its subagents. Organization
+guidance changes do not alter workflow ownership, repository specifications or
+the authorization of an individual request.
+
 - [specbook](skills/specbook/SKILL.md): Authoritative capability specifications
   in `spec/`, with normative rules and observable acceptance criteria.
 - [docbook](skills/docbook/SKILL.md): Documentation in `docs/`, with Diátaxis
