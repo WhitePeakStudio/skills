@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "skills",
-  "version": "0.9.0",
-  "description": "Capture, refine and execute GitHub issues, maintain specifications and documentation, coordinate reviewed task workflows, and optimize skill tokens.",
+  "version": "0.10.0",
+  "description": "Reusable repository skills and custom agents with shared WhitePeakStudio guidance for issue work and reviewed task workflows.",
   "author": {
     "name": "jb-perrier",
     "url": "https://github.com/jb-perrier"
