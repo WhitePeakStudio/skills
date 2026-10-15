@@ -9,10 +9,11 @@ Do not pick the next Ready issue, refine the backlog, or load intake skills.
 ## Start or resume
 
 Fetch the current brief, relevant decisions, relationships/dependencies, project
-status, execution comments, and linked PRs. Distinguish a new task from recorded
+status, runner records or retained task worktrees, and linked PRs. Distinguish a new task from recorded
 execution before checking new-start eligibility. Reuse an existing task/PR for
 resume; never create a second checkout because its status is no longer Ready.
 If a writer may still be active, confirm it stopped before recovery/dispatch.
+Treat legacy execution comments as recovery evidence, without adding new ones.
 Unknown execution ownership blocks another run.
 
 A new start requires an open executable leaf in `Ready`, one resolved target
@@ -27,11 +28,19 @@ requirements in the existing task contract, without comments/research transcript
 The planner still owns authoritative specifications and the implementation plan;
 all three independent reviews and the existing state schema remain unchanged.
 
-Before role dispatch, record task ID, target repository, branch, absolute worktree,
-and base SHA in one concise issue execution comment; move the item to `In progress`
-and verify both writes. On partial failure, preserve the checkout/created comment
-and repair missing association/status rather than create another task or comment.
-Record/reuse the known comment on resume. Do not invent assignees or field values.
+Before role dispatch, retain the issue URL/revision in the initial task note;
+the note and Git worktree metadata already identify task, branch, path, and base.
+Keep runner-owned job associations in its durable state, never issue comments.
+On resume, inspect its recorded workspace and Git worktrees/notes (or archived
+note history after delivery); reuse the uniquely matching task. If ownership is
+ambiguous, stop instead of creating another checkout. Move the item to
+In progress and verify the write, unless the harness owns status updates.
+On uncertain writes, inspect current state and retry only missing operations.
+
+Issue comments contain only answers, PR links, material questions, and actionable
+blockers. Do not post execution, worktree, progress, or resolved-status notices.
+When the harness owns publication, return these outcomes to it instead of
+posting another comment. Do not invent assignees or project fields.
 
 Keep project status `In progress` through internal review/correction loops. Report
 material blockers/questions concisely on the issue without another status. Before
@@ -44,7 +53,8 @@ fresh implementation and documentation assessments under existing rules.
 ## Delivery and completion
 
 Follow [delivery](delivery.md). On PR creation, explicitly link the issue and PR,
-update the execution comment with the PR URL, and move the item to `In review`.
+publish one concise PR link (or return it to the publishing harness), and move the
+item to `In review`.
 Verify the updates; report actual hosted verification, including failures/pending
 checks. Failed issue/project updates preserve the PR, branch, and recoverable
 checkout until reconciled; retry only missing operations. Opening a PR never

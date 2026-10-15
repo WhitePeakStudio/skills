@@ -52,13 +52,15 @@ Only actionable leaves with clear requirements and satisfied dependencies become
 `Ready`; unresolved work stays `Backlog`. Refinement returns URLs and never starts
 implementation or approves a specification/implementation plan.
 
-Explicitly give a Ready issue URL to `task-orchestrate`. It records one execution,
+Explicitly give a Ready issue URL to `task-orchestrate`. It records one private execution association,
 uses the existing worktree and three-review flow, and keeps `In progress` through
 internal loops. A linked PR moves the item to `In review`; only observed merge or
 explicit user acceptance permits `Done`/completed closure on a follow-up. Resume
 recorded work rather than starting another task. Issue changes use normal contract
 correction/review. V1 assumes one dispatcher, without automatic queue selection,
 distributed locking, merge monitoring, or additional project fields/statuses.
+Execution/worktree bookkeeping stays in task notes, Git, and runner state. Issue
+comments contain only answers, PR links, questions, and actionable blockers.
 See the conditional [issue handoff](skills/task-orchestrate/references/issues.md).
 
 ## Issue workflow labels
