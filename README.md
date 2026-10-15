@@ -14,6 +14,8 @@ script.
   or drafts, respecting repository ownership and avoiding duplicates.
 - [issue-refine](skills/issue-refine/SKILL.md): Research and clarify issues, split
   coherent deliveries when needed, and prepare actionable leaves as Ready.
+- [issue-execute](skills/issue-execute/SKILL.md): Execute scoped standalone issue
+  work and return observed evidence for review.
 - [task-orchestrate](skills/task-orchestrate/SKILL.md): Coordinate isolated tasks
   through fresh-context roles and pull-request delivery.
 - [task-plan](skills/task-plan/SKILL.md): Write affected specifications and the
@@ -58,6 +60,22 @@ recorded work rather than starting another task. Issue changes use normal contra
 correction/review. V1 assumes one dispatcher, without automatic queue selection,
 distributed locking, merge monitoring, or additional project fields/statuses.
 See the conditional [issue handoff](skills/task-orchestrate/references/issues.md).
+
+## Issue workflow labels
+
+Use exactly one existing label before Ready: workflow:task selects task-orchestrate
+for repository changes; workflow:agent selects a general agent using issue-execute
+for standalone research, analysis, issue management, or explicitly requested
+operations. Missing, conflicting, or unsupported workflow labels prevent runner
+enrollment. Creation/refinement selects the label when intent is clear, not the
+next issue to execute.
+
+The runner posts a general agent's verified result summary and moves the item to
+In review; explicit acceptance permits Done. No PR or task review stages are
+required for this route. General agents do not modify repository content or bypass
+the task workflow. They use a basic temporary environment with persistent scratch
+data, fresh sessions, existing credentials, and no implicit privilege expansion.
+Direct issue-execute invocation returns its result to the caller.
 
 ## Task workflow
 

@@ -27,6 +27,11 @@ inventing acceptance, product decisions, or implementation plans. Add the item
 to the selected project as `Backlog`. Preserve supplied priority/scheduling;
 do not guess priorities, estimates, deadlines, or assignees.
 
+For an issue, set exactly one existing workflow label when intent is clear:
+workflow:task for repository changes; workflow:agent for standalone actions or
+research. Ask when ambiguous or required labels are missing. Drafts retain the
+intended route in their captured scope until conversion. Do not alter active work.
+
 Use body files/stdin for multiline text. If updating a captured description is
 explicitly authorized, reread it and reconcile intervening edits before replacing.
 Verify creation, membership, and status separately. On partial/unknown failure,
@@ -35,4 +40,4 @@ the missing authorized operation. Never blindly repeat creation.
 
 Return the issue URL or project URL/draft item ID, placement, verified status,
 and unresolved questions/partial failures. Keep research for refinement; do not
-mark `Ready`, launch implementation, or load task workflow instructions.
+mark `Ready`, launch execution, or load task workflow instructions.
