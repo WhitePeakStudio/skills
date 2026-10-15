@@ -1,14 +1,20 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "skills",
-  "version": "0.7.0",
-  "description": "Capture and refine GitHub issues, maintain specifications and documentation, coordinate isolated task workflows, and optimize skill token costs.",
+  "version": "0.8.0",
+  "description": "Capture, refine and execute GitHub issues, maintain specifications and documentation, coordinate reviewed task workflows, and optimize skill tokens.",
   "author": {
     "name": "jb-perrier",
     "url": "https://github.com/jb-perrier"
   },
   "repository": "https://github.com/WhitePeakStudio/skills",
-  "keywords": ["documentation", "specifications", "diataxis", "skill-optimization", "issues"],
+  "keywords": [
+    "documentation",
+    "specifications",
+    "diataxis",
+    "skill-optimization",
+    "issues"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
@@ -22,7 +28,8 @@
           "Use skill-optimize to reduce skill tokens while preserving instructions and report comparable before/after counts.",
           "Use issue-create to capture a request in the selected backlog using its repository conventions.",
           "Use issue-refine to clarify an issue, split coherent deliveries when needed, and return Ready issue URLs.",
-          "Use task-orchestrate to coordinate an isolated repository task through specification planning, implementation, documentation, and all three review gates to a pull request."
+          "Use task-orchestrate to coordinate an isolated repository task through specification planning, implementation, documentation, and all three review gates to a pull request.",
+          "Use issue-execute for explicitly scoped standalone issue work and return evidence for review."
         ]
       }
     }

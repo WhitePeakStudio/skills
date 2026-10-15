@@ -42,8 +42,8 @@ Single-repository work and its parents stay in that repository. Existing misplac
 issues require a placement decision, not an implicit transfer or duplicate.
 
 Split only for independently useful/verifiable deliveries, distinct repositories,
-or meaningful dependency boundaries. Each executable child ordinarily delivers
-one coherent PR in one repository. Search for existing matching children first;
+or meaningful dependency boundaries. Each task child ordinarily delivers one coherent PR in one repository; standalone
+agent children have their own observable outcome. Search for existing matching children first;
 link/reuse them without silently rewriting unrelated work. A parent owns overall
 outcome/scope/completion, not duplicated child descriptions. Never split into task
 workflow roles such as plan, test, review, or document.
@@ -55,9 +55,14 @@ in `Backlog` during refinement; never enqueue them alongside their children.
 
 ## Readiness and return
 
+Require exactly one existing workflow label: workflow:task for repository changes,
+workflow:agent for standalone research/actions. Resolve ambiguity before Ready;
+do not invent missing labels or reroute active/delivered work. Task acceptance
+describes the change; agent acceptance describes the requested coverage or outcome.
+
 Only open executable leaves with a resolved target, clear scope/acceptance,
 confirmed material decisions, and satisfied blocking dependencies become `Ready`.
-Readiness permits planning; it is not specification/implementation approval.
+Readiness permits the labeled execution; it is not specification/plan approval.
 Unresolved or blocked work stays `Backlog`, with a concise explanation. Preserve
 priority, dates, estimates, and assignees unless changes are explicitly requested.
 
@@ -67,5 +72,4 @@ conversion/link, membership, and status; inspect partial results before retrying
 so issues and links are not duplicated. A failed update is not claimed successful.
 
 Return concise Ready issue URLs, parent/child/dependency links, and remaining
-questions or partial failures. Return the URL for explicit `task-orchestrate`
-invocation; do not dispatch agents, select the next issue, or load its lifecycle.
+questions or partial failures. Return the URL and workflow label for explicit execution; do not dispatch agents, select the next issue, or load its lifecycle.
