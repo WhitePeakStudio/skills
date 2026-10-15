@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "skills",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Capture, refine and execute GitHub issues, maintain specifications and documentation, coordinate reviewed task workflows, and optimize skill tokens.",
   "author": {
     "name": "jb-perrier",
@@ -29,7 +29,7 @@
           "Use issue-create to capture a request in the selected backlog using its repository conventions.",
           "Use issue-refine to clarify an issue, split coherent deliveries when needed, and return Ready issue URLs.",
           "Use task-orchestrate to coordinate an isolated repository task through specification planning, implementation, documentation, and all three review gates to a pull request.",
-          "Use issue-execute for explicitly scoped standalone issue work and return evidence for review."
+          "Use issue-execute for explicitly scoped issue or comment requests and return evidence for review."
         ]
       }
     }

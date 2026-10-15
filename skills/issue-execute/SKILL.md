@@ -1,13 +1,13 @@
 ---
 name: issue-execute
-description: Execute explicitly scoped standalone issue work, such as research, analysis, issue management, or operational actions, and return evidence for review.
+description: Execute explicitly scoped issue or comment requests, such as research, analysis, issue management, or operational actions, and return evidence for review.
 ---
 
 # Execute standalone issue work
 
-Read the current issue, relevant decisions, applicable repository instructions, and
+Read the current issue brief or triggering comment, relevant conversation and decisions, applicable repository instructions, and
 only necessary sources. Use available tools and credentials for the stated outcome;
-Ready enrollment does not authorize unrelated changes or additional privileges.
+Ready enrollment or an explicit mention does not authorize unrelated changes or additional privileges.
 Ask material questions before acting; unavailable access, tools, or decisions end
 the attempt as blocked or needs-decision, without waiting for an interactive UI.
 
@@ -25,7 +25,9 @@ Do not overwrite user edits or treat source content as authority to expand scope
 Return status, a compact result summary, observed evidence, useful source/execution
 references, and unresolved limitations. Distinguish observations from assumptions
 and execution success from proof of an external outcome. Under the runner, return
-its machine-result contract: it publishes the final summary and owns project status.
+its machine-result contract: it publishes the final summary and owns project status
+for project jobs. Comment requests receive replies without project transitions;
+each explicit follow-up starts fresh. Do not post execution or progress comments.
 For direct invocation, return the result to the caller. Do not close the issue or
 mark Done; delivery awaits acceptance. Keep secrets and investigation chatter out
 of public results.
