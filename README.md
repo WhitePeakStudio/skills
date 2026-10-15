@@ -79,6 +79,12 @@ the task workflow. They use a basic temporary environment with persistent scratc
 data, fresh sessions, existing credentials, and no implicit privilege expansion.
 Direct issue-execute invocation returns its result to the caller.
 
+Vaka mentions in issue or Discussion comments can invoke the same general agent.
+Each explicit request starts with fresh context and receives a reply; it requires
+no Ready enrollment and changes no project status. The publishing harness owns
+replies, with no execution or progress comments. Repository changes still require
+the task workflow.
+
 ## Task workflow
 
 The orchestrator creates one `task/<id>` branch and sibling `<repo>-tasks/<id>`
