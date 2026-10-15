@@ -5,7 +5,7 @@ description: Execute explicitly scoped issue or comment requests, such as resear
 
 # Execute standalone issue work
 
-Read the current issue brief or triggering comment, relevant conversation and decisions, applicable repository instructions, and
+Read the current issue brief or triggering post/comment, relevant conversation and decisions, applicable repository instructions, and
 only necessary sources. Use available tools and credentials for the stated outcome;
 Ready enrollment or an explicit mention does not authorize unrelated changes or additional privileges.
 Ask material questions before acting; unavailable access, tools, or decisions end
@@ -15,7 +15,8 @@ Research, analyze, or perform explicitly requested external actions. Inspect cur
 state before writes and confirm their outcome afterward. Repository code,
 specification, and documentation changes require workflow:task; do not implement
 them here or launch that workflow implicitly. Work without subagents or task notes.
-Keep scratch files outside the research checkout; leave the checkout unchanged.
+For filesystem work follow the shared [workspace conventions](../workspace.md).
+Start from the available workspace and clone only when needed; leave research checkouts unchanged.
 
 On resume, inspect preserved artifacts, current requirements, and external results.
 Reuse completed work. Before retrying an interrupted write, establish what happened;

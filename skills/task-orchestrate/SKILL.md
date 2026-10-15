@@ -45,11 +45,14 @@ selects the orchestrator model nor waives fresh context.
 
 ## Isolation and dispatch
 
+Read [workspace conventions](../workspace.md) before filesystem work. Prepare the
+target checkout on demand using the harness tool when available; keep environment
+provisioning with the harness. Existing assigned checkouts may be reused after verification.
 Inspect repository instructions, scope, and delivery authorization. Resolve the
 requested target branch, otherwise the remote default, and its current base
 commit; ask if unresolved. Choose `<id>` as `<short-kebab-slug>-<8-random-hex>`.
-Check branch/worktree/note collisions, then create `task/<id>` and sibling
-`<repo>-tasks/<id>` from base. Verify path, branch, HEAD, and note absence at base.
+Check branch/worktree/note collisions, then create `task/<id>` and
+`<workspace-root>/tasks/<id>` from base. Verify path, branch, HEAD, and note absence at base.
 Never reuse another task's mutable checkout. Different task worktrees may run
 concurrently; each has one active role writer. Never overwrite unrelated changes,
 force-push, or delete dirty worktrees.
