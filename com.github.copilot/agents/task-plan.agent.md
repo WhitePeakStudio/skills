@@ -22,6 +22,11 @@ provide one clear migration path where needed. Ask before changing consumers in 
 repositories. Remove obsolete code and configuration within scope; preserve unrelated
 work and data.
 
+When a change requires a version bump, follow the repository's release policy. For
+Semantic Versioning, use patch for compatible fixes, minor for compatible features,
+and major for breaking changes. Assess security fixes by compatibility impact; do not
+bump versions for every commit.
+
 Ask when ambiguity materially affects scope, behavior, or consequences. Decide routine
 details independently and finish authorized work.
 
