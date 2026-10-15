@@ -194,9 +194,11 @@ skills/
 |-- skill-optimize/SKILL.md
 |-- issue-create/SKILL.md
 |-- issue-refine/SKILL.md
+|-- issue-execute/SKILL.md
 |-- task-orchestrate/SKILL.md
 |-- task-orchestrate/references/gates.md
 |-- task-orchestrate/references/issues.md
+|-- workspace.md
 |-- task-orchestrate/scripts/check_gate.py
 |-- task-plan/SKILL.md
 |-- task-review-plan/SKILL.md
@@ -208,7 +210,7 @@ skills/
 ```
 
 The root manifest uses the [Agent Plugins schema](https://agent-plugins.org/schemas/1.0.0/plugin.schema.json).
-All twelve skills are discovered from `skills/`. OpenAI presentation metadata lives in
+All thirteen skills are discovered from `skills/`. OpenAI presentation metadata lives in
 `extensions.com.openai`; the repository also includes a Codex marketplace catalog.
 The package requires no MCP servers. Issue skills and issue-based orchestration
 require authenticated `gh` with access to the selected repositories/project;
@@ -261,6 +263,11 @@ task workflow. Skill optimization has no sibling skill
 dependencies; exact counting uses a tokenizer available on the host.
 For the task workflow, install all seven `task-*` skills plus `specbook` and
 `docbook` together, preserving their sibling directory layout for relative links.
+Include `skills/workspace.md` alongside the skill directories for `task-orchestrate`
+and `issue-execute`. It owns the shared `repos/<owner>/<repository>/`, `tasks/<task-id>/`
+and `temp/` conventions. Workspaces start empty when supplied by the harness; sources
+do not require a clone. Clone only when needed and reuse verified work on resume.
+Environment provisioning and physical storage remain harness responsibilities.
 Specbook and docbook retain their existing instructions
 and replace the previous top-level paths.
 
